@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #1E293B;
+  --color-sage: #86EFAC;
+  --color-terracotta: #E27D60;
+  --color-alabaster: #F8FAFC;
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .pattern-bg {
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+html { scroll-behavior: smooth; }
+body { background-color: #F8FAFC; color: #1E293B; }
+
+/* Custom CSS to simulate physical books */
+.book-spine {
+    box-shadow: inset 4px 0 10px rgba(0,0,0,0.1), 
+                inset -1px 0 2px rgba(255,255,255,0.3), 
+                5px 5px 15px rgba(0,0,0,0.05);
+    border-left: 6px solid rgba(0,0,0,0.2);
+    border-radius: 2px 6px 6px 2px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.book-spine:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: inset 4px 0 10px rgba(0,0,0,0.1), 
+                10px 15px 25px rgba(0,0,0,0.1);
+}
