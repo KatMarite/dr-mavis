@@ -1,3 +1,5 @@
+import { motion } from 'motion/react';
+
 export default function About() {
   return (
     <main>
@@ -6,9 +8,14 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16 items-center">
           
           {/* Image Column */}
-          <div className="w-full lg:w-5/12 relative">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="w-full lg:w-5/12 relative"
+          >
             <div className="absolute -inset-4 bg-sage/20 rounded-2xl transform -rotate-3 -z-10"></div>
-            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dr Mavis Mazhura Portrait" className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]" />
+            <img src="/hero-image.png" alt="Dr Mavis Mazhura Portrait" className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]" />
             
             {/* Credential Overlay */}
             <div className="absolute bottom-6 -right-6 md:-right-10 bg-navy p-5 rounded-xl shadow-2xl max-w-[220px] border-r-4 border-terracotta text-white">
@@ -17,10 +24,15 @@ export default function About() {
               <div className="w-8 h-1 bg-sage my-3"></div>
               <p className="text-xs text-slate-300">Multiple award-winning facilitator & global coach.</p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Text Column */}
-          <div className="w-full lg:w-7/12">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="w-full lg:w-7/12"
+          >
             <h1 className="text-5xl lg:text-6xl font-serif text-navy leading-[1.1] mb-6">
               Dr Mavis Mazhura
             </h1>
@@ -39,7 +51,7 @@ export default function About() {
                 Having worked, studied, and delivered programmes globally—including across Africa, Europe, North America, Asia, and Australia—Dr. Mazhura brings a truly cosmopolitan and systems-aware leadership perspective to every engagement.
               </p>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </section>
@@ -47,7 +59,13 @@ export default function About() {
       {/* 2. The Philosophy Banner */}
       <section className="py-24 bg-navy relative overflow-hidden">
         <div className="absolute inset-0 pattern-bg opacity-10"></div>
-        <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-5xl mx-auto px-6 text-center relative z-10"
+        >
           <svg className="w-12 h-12 mx-auto text-sage mb-8 opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
           <h2 className="text-3xl md:text-5xl font-serif text-white leading-tight mb-8">
             "Leadership is not just performance.<br />
@@ -57,7 +75,7 @@ export default function About() {
           <p className="text-lg text-slate-300 max-w-3xl mx-auto">
             Using the Leadership for Women Transformative Process (LFWTP), Dr. Mazhura helps leaders build internal leadership systems, reduce emotional depletion, expand capacity without overworking, and lead with clarity, authority, and wellbeing.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* 3. The Methodology (Integrations) */}

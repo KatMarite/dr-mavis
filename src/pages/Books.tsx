@@ -3,8 +3,10 @@ export default function Books() {
     <main>
       {/* 1. Hero Section */}
       <section className="pt-32 pb-16 lg:pt-48 lg:pb-24 bg-navy text-white text-center px-6 relative overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Library Books" className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/90 to-transparent"></div>
         {/* Abstract glowing orb (Terracotta for the Books page) */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-terracotta/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-terracotta/20 rounded-full blur-[100px] pointer-events-none z-0"></div>
         
         <div className="max-w-3xl mx-auto relative z-10">
           <span className="text-terracotta font-semibold tracking-widest uppercase text-sm mb-4 block">The Library</span>

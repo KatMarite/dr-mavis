@@ -2,13 +2,15 @@ export default function Services() {
   return (
     <main>
       {/* 1. Services Hero */}
-      <section className="pt-32 pb-16 lg:pt-48 lg:pb-24 bg-white text-center px-6 border-b border-slate-200">
-        <div className="max-w-3xl mx-auto">
-          <span className="text-terracotta font-semibold tracking-widest uppercase text-sm mb-4 block">Practice Areas</span>
-          <h1 className="text-5xl lg:text-6xl font-serif text-navy leading-tight mb-6">
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-navy text-center px-6 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Business Meeting" className="absolute inset-0 w-full h-full object-cover opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy to-navy/50"></div>
+        <div className="max-w-3xl mx-auto relative z-10 text-white">
+          <span className="text-sage font-semibold tracking-widest uppercase text-sm mb-4 block">Practice Areas</span>
+          <h1 className="text-5xl lg:text-6xl font-serif leading-tight mb-6">
             Transforming Leaders & Organisations
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg text-slate-300 leading-relaxed">
             Process-driven, neuroscience-informed methodologies designed to create lasting behavioural change, high-performing teams, and measurable ROI.
           </p>
         </div>

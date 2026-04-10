@@ -10,9 +10,8 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full z-50 transition-all duration-300 bg-alabaster/95 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link to="/" className="flex flex-col">
-          <span className="font-serif font-bold text-xl tracking-tight text-navy leading-none">Dr Mavis Mazhura</span>
-          <span className="text-[10px] uppercase tracking-widest text-slate-500 font-semibold mt-1">Leadership Psychologist</span>
+        <Link to="/" className="flex items-center">
+          <img src="/logo.png" alt="Dr Mavis Mazhura Logo" className="h-[72px] lg:h-20 w-auto" />
         </Link>
         <div className="hidden md:flex items-center space-x-8">
           <Link to="/about" className={`text-sm transition-colors ${isAbout ? 'font-bold text-terracotta' : 'font-medium text-slate-600 hover:text-terracotta'}`}>About</Link>

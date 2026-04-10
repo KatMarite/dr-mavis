@@ -3,8 +3,10 @@ export default function Keynotes() {
     <main>
       {/* 1. Hero Section */}
       <section className="pt-32 pb-16 lg:pt-48 lg:pb-24 bg-navy text-white text-center px-6 relative overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1475721025505-23fa97607a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Speaker on Stage" className="absolute inset-0 w-full h-full object-cover opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/80 to-transparent"></div>
         {/* Abstract glowing orb */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sage/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sage/10 rounded-full blur-[100px] pointer-events-none z-0"></div>
         
         <div className="max-w-3xl mx-auto relative z-10">
           <span className="text-sage font-semibold tracking-widest uppercase text-sm mb-4 block">For the Stage & Boardroom</span>
