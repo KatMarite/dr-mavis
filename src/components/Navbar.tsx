@@ -63,9 +63,27 @@ export default function Navbar() {
             <Link to="/keynotes" onClick={closeMobileMenu} className={`text-lg transition-colors ${isKeynotes ? 'font-bold text-terracotta' : 'font-medium text-slate-600 hover:text-terracotta'}`}>Keynotes</Link>
             <Link to="/books" onClick={closeMobileMenu} className={`text-lg transition-colors ${isBooks ? 'font-bold text-terracotta' : 'font-medium text-slate-600 hover:text-terracotta'}`}>Books</Link>
             <div className="pt-4 border-t border-slate-100">
-              <a href="#scorecard" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-base font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
-                Take the Scorecard
-              </a>
+              {isAbout ? (
+                <a href="#contact" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
+                  Work With Me
+                </a>
+              ) : isServices ? (
+                <a href="#quote" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
+                  Request Proposal
+                </a>
+              ) : isKeynotes ? (
+                <a href="#book-dr-mavis" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
+                  Book for an Event
+                </a>
+              ) : isBooks ? (
+                <a href="#inquire" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
+                  Bulk Orders
+                </a>
+              ) : (
+                <a href="#scorecard" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
+                  Take the Scorecard
+                </a>
+              )}
             </div>
           </div>
         </div>
