@@ -1,13 +1,19 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 
 export default function LeadershipForWomen() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
   return (
     <div className="bg-[#F8FAFC] text-navy min-h-screen">
       {/* Navigation Bar (Simplified for Landing Page focus) */}
       <nav className="fixed w-full z-50 transition-all duration-300 bg-alabaster/95 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center" onClick={closeMobileMenu}>
             <img src="/logo.png" alt="Dr Mavis Mazhura Logo" className="h-[72px] lg:h-20 w-auto" />
           </Link>
           <div className="hidden md:flex items-center space-x-6">
@@ -16,12 +22,34 @@ export default function LeadershipForWomen() {
             <a href="#process" className="text-sm font-medium text-slate-600 hover:text-terracotta transition-colors">The Process</a>
             <a href="#testimonials" className="text-sm font-medium text-slate-600 hover:text-terracotta transition-colors">Success Stories</a>
           </div>
-          <div>
-            <a href="#apply" className="bg-terracotta text-white text-sm font-semibold px-6 py-2.5 rounded shadow hover:bg-[#c96c51] transition-all">
+          <div className="flex items-center">
+            <a href="#apply" className="hidden md:inline-block bg-terracotta text-white text-sm font-semibold px-6 py-2.5 rounded shadow hover:bg-[#c96c51] transition-all">
               Apply Now
             </a>
+            <button className="md:hidden text-navy p-2 ml-4" onClick={toggleMobileMenu}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8">
+                <path strokeLinecap="round" strokeLinejoin="round" d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"} />
+              </svg>
+            </button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-slate-200 absolute w-full left-0 shadow-xl">
+            <div className="flex flex-col px-6 py-4 space-y-4">
+              <a href="#overview" onClick={closeMobileMenu} className="text-lg font-medium text-slate-600 hover:text-terracotta transition-colors">Overview</a>
+              <a href="#the-shift" onClick={closeMobileMenu} className="text-lg font-medium text-slate-600 hover:text-terracotta transition-colors">The Shift</a>
+              <a href="#process" onClick={closeMobileMenu} className="text-lg font-medium text-slate-600 hover:text-terracotta transition-colors">The Process</a>
+              <a href="#testimonials" onClick={closeMobileMenu} className="text-lg font-medium text-slate-600 hover:text-terracotta transition-colors">Success Stories</a>
+              <div className="pt-4 border-t border-slate-100">
+                <a href="#apply" onClick={closeMobileMenu} className="block w-full text-center bg-terracotta text-white text-base font-semibold px-5 py-3 rounded shadow-md transition-all">
+                  Apply Now
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* 1. Landing Page Hero */}
