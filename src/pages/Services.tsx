@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Services() {
   return (
     <main>
@@ -55,35 +57,105 @@ export default function Services() {
 
           {/* Core Programmes Grid */}
           <h3 className="text-xl font-serif text-navy mb-6">Core Programmes</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="p-5 bg-white border border-slate-200 rounded-lg hover:border-sage hover:shadow-md transition-all group cursor-pointer relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-2 h-full bg-terracotta"></div>
-              <h4 className="font-bold text-navy group-hover:text-terracotta transition-colors">Leadership for Women (Flagship)</h4>
-            </div>
-            <div className="p-5 bg-white border border-slate-200 rounded-lg hover:border-sage hover:shadow-md transition-all group cursor-pointer">
-              <h4 className="font-bold text-navy group-hover:text-terracotta transition-colors">Effective Strategic Leadership</h4>
-            </div>
-            <div className="p-5 bg-white border border-slate-200 rounded-lg hover:border-sage hover:shadow-md transition-all group cursor-pointer">
-              <h4 className="font-bold text-navy group-hover:text-terracotta transition-colors">Effective Personal Leadership</h4>
-            </div>
-            <div className="p-5 bg-white border border-slate-200 rounded-lg hover:border-sage hover:shadow-md transition-all group cursor-pointer">
-              <h4 className="font-bold text-navy group-hover:text-terracotta transition-colors">Effective Team Dynamics</h4>
-            </div>
-            <div className="p-5 bg-white border border-slate-200 rounded-lg hover:border-sage hover:shadow-md transition-all group cursor-pointer">
-              <h4 className="font-bold text-navy group-hover:text-terracotta transition-colors">Attitude is Everything</h4>
-            </div>
-            <div className="p-5 bg-white border border-slate-200 rounded-lg hover:border-sage hover:shadow-md transition-all group cursor-pointer">
-              <h4 className="font-bold text-navy group-hover:text-terracotta transition-colors">Effective Personal Productivity</h4>
-            </div>
-            <div className="p-5 bg-white border border-slate-200 rounded-lg hover:border-sage hover:shadow-md transition-all group cursor-pointer">
-              <h4 className="font-bold text-navy group-hover:text-terracotta transition-colors">Grand Masters of Success</h4>
-            </div>
-            <div className="p-5 bg-white border border-slate-200 rounded-lg hover:border-sage hover:shadow-md transition-all group cursor-pointer">
-              <h4 className="font-bold text-navy group-hover:text-terracotta transition-colors">Effective Leadership Development</h4>
-            </div>
-            <div className="p-5 bg-white border border-slate-200 rounded-lg hover:border-sage hover:shadow-md transition-all group cursor-pointer">
-              <h4 className="font-bold text-navy group-hover:text-terracotta transition-colors">Effective Coaching & Empowerment</h4>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Link to="/leadership-for-women" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-terracotta hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+              <div className="absolute top-0 right-0 w-2 h-full bg-terracotta group-hover:w-3 transition-all"></div>
+              <h4 className="text-xl font-bold text-navy group-hover:text-terracotta transition-colors mb-3">Leadership for Women (Flagship)</h4>
+              <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">A transformative 12-week process empowering senior women leaders to build executive presence, internal authority, and a sustainable approach to heavy responsibilities.</p>
+              <div className="mt-auto">
+                <span className="text-terracotta font-semibold text-sm inline-flex items-center transition-transform group-hover:translate-x-2">
+                  Explore Programme <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </span>
+              </div>
+            </Link>
+            
+            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+              <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
+              <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Effective Strategic Leadership</h4>
+              <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Develop robust organizational strategies, clearly align your teams with overarching goals, and successfully navigate complex business landscapes with measurable results.</p>
+              <div className="mt-auto">
+                <span className="text-sage font-semibold text-sm inline-flex items-center transition-transform group-hover:translate-x-2">
+                  Request a Proposal <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </span>
+              </div>
+            </a>
+            
+            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+              <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
+              <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Effective Personal Leadership</h4>
+              <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Discover your core strengths, clarify personal goals, and establish the behavioural habits necessary to lead yourself effectively before attempting to lead others.</p>
+              <div className="mt-auto">
+                <span className="text-sage font-semibold text-sm inline-flex items-center transition-transform group-hover:translate-x-2">
+                  Request a Proposal <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </span>
+              </div>
+            </a>
+            
+            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+              <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
+              <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Effective Team Dynamics</h4>
+              <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Foster deep psychological safety, resolve long-standing conflicts, and build high-functioning teams that collaborate seamlessly toward mutual success.</p>
+              <div className="mt-auto">
+                <span className="text-sage font-semibold text-sm inline-flex items-center transition-transform group-hover:translate-x-2">
+                  Request a Proposal <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </span>
+              </div>
+            </a>
+            
+            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+              <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
+              <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Attitude is Everything</h4>
+              <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Cultivate a forward-thinking, resilient mindset that turns obstacles into tangible opportunities and inspires everyone around you to perform at their best.</p>
+              <div className="mt-auto">
+                <span className="text-sage font-semibold text-sm inline-flex items-center transition-transform group-hover:translate-x-2">
+                  Request a Proposal <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </span>
+              </div>
+            </a>
+            
+            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+              <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
+              <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Effective Personal Productivity</h4>
+              <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Master time management, prioritization, and sustained focus to maximize your professional output without sacrificing your physical and mental well-being.</p>
+              <div className="mt-auto">
+                <span className="text-sage font-semibold text-sm inline-flex items-center transition-transform group-hover:translate-x-2">
+                  Request a Proposal <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </span>
+              </div>
+            </a>
+            
+            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+              <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
+              <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Grand Masters of Success</h4>
+              <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Learn the foundational principles of historical high achievers and integrate their proven, timeless strategies directly into your modern professional life.</p>
+              <div className="mt-auto">
+                <span className="text-sage font-semibold text-sm inline-flex items-center transition-transform group-hover:translate-x-2">
+                  Request a Proposal <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </span>
+              </div>
+            </a>
+            
+            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+              <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
+              <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Effective Leadership Development</h4>
+              <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Build a reliable pipeline of capable leaders within your own organization through highly structured mentorship, feedback loops, and growth frameworks.</p>
+              <div className="mt-auto">
+                <span className="text-sage font-semibold text-sm inline-flex items-center transition-transform group-hover:translate-x-2">
+                  Request a Proposal <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </span>
+              </div>
+            </a>
+            
+            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+              <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
+              <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Effective Coaching & Empowerment</h4>
+              <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Equip your managers with the essential coaching skills required to develop, empower, and inspire their direct reports for maximum engagement.</p>
+              <div className="mt-auto">
+                <span className="text-sage font-semibold text-sm inline-flex items-center transition-transform group-hover:translate-x-2">
+                  Inquire Now <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </span>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -226,7 +298,7 @@ export default function Services() {
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="text-3xl font-serif text-navy mb-4">Ready to implement Sustainable Leadership?</h2>
           <p className="text-slate-600 mb-8">Let's discuss how we can tailor our programmes or consulting services for your specific organizational needs.</p>
-          <a href="#" className="inline-block bg-terracotta text-white px-8 py-4 rounded font-bold hover:bg-[#c96c51] shadow-lg transition-all">
+          <a href="mailto:mavism@tb2b.co.za" className="inline-block bg-terracotta text-white px-8 py-4 rounded font-bold hover:bg-[#c96c51] shadow-lg transition-all">
             Request a Proposal
           </a>
         </div>

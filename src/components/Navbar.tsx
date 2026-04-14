@@ -30,7 +30,7 @@ export default function Navbar() {
               Work With Me
             </a>
           ) : isServices ? (
-            <a href="#quote" className="bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded shadow-md hover:bg-slate-800 transition-all">
+            <a href="mailto:mavism@tb2b.co.za" className="bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded shadow-md hover:bg-slate-800 transition-all">
               Request Proposal
             </a>
           ) : isKeynotes ? (
@@ -68,7 +68,7 @@ export default function Navbar() {
                   Work With Me
                 </a>
               ) : isServices ? (
-                <a href="#quote" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
+                <a href="mailto:mavism@tb2b.co.za" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
                   Request Proposal
                 </a>
               ) : isKeynotes ? (
