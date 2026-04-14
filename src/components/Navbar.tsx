@@ -11,6 +11,7 @@ export default function Navbar() {
   const isServices = location.pathname === '/services';
   const isKeynotes = location.pathname === '/keynotes';
   const isBooks = location.pathname === '/books';
+  const isMedia = location.pathname === '/media';
 
   return (
     <nav className="fixed w-full z-50 transition-all duration-300 bg-alabaster/95 backdrop-blur-md border-b border-slate-200">
@@ -23,6 +24,7 @@ export default function Navbar() {
           <Link to="/services" className={`text-sm transition-colors ${isServices ? 'font-bold text-terracotta' : 'font-medium text-slate-600 hover:text-terracotta'}`}>Services</Link>
           <Link to="/keynotes" className={`text-sm transition-colors ${isKeynotes ? 'font-bold text-terracotta' : 'font-medium text-slate-600 hover:text-terracotta'}`}>Keynotes</Link>
           <Link to="/books" className={`text-sm transition-colors ${isBooks ? 'font-bold text-terracotta' : 'font-medium text-slate-600 hover:text-terracotta'}`}>Books</Link>
+          <Link to="/media" className={`text-sm transition-colors ${isMedia ? 'font-bold text-terracotta' : 'font-medium text-slate-600 hover:text-terracotta'}`}>Media</Link>
         </div>
         <div className="hidden md:block">
           {isAbout ? (
@@ -62,6 +64,7 @@ export default function Navbar() {
             <Link to="/services" onClick={closeMobileMenu} className={`text-lg transition-colors ${isServices ? 'font-bold text-terracotta' : 'font-medium text-slate-600 hover:text-terracotta'}`}>Services</Link>
             <Link to="/keynotes" onClick={closeMobileMenu} className={`text-lg transition-colors ${isKeynotes ? 'font-bold text-terracotta' : 'font-medium text-slate-600 hover:text-terracotta'}`}>Keynotes</Link>
             <Link to="/books" onClick={closeMobileMenu} className={`text-lg transition-colors ${isBooks ? 'font-bold text-terracotta' : 'font-medium text-slate-600 hover:text-terracotta'}`}>Books</Link>
+            <Link to="/media" onClick={closeMobileMenu} className={`text-lg transition-colors ${isMedia ? 'font-bold text-terracotta' : 'font-medium text-slate-600 hover:text-terracotta'}`}>Media</Link>
             <div className="pt-4 border-t border-slate-100">
               {isAbout ? (
                 <a href="#contact" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">

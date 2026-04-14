@@ -11,6 +11,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Keynotes from './pages/Keynotes';
 import Books from './pages/Books';
+import Media from './pages/Media';
 import LeadershipForWomen from './pages/LeadershipForWomen';
 
 function AppLayout() {
@@ -35,6 +36,7 @@ function AppLayout() {
           <Route path="/services" element={<Services />} />
           <Route path="/keynotes" element={<Keynotes />} />
           <Route path="/books" element={<Books />} />
+          <Route path="/media" element={<Media />} />
         </Routes>
       </div>
       <Footer />

@@ -24,6 +24,7 @@ export default function Footer() {
             <li><a href="#" className="hover:text-terracotta transition-colors">Leadership Programmes</a></li>
             <li><a href="#" className="hover:text-terracotta transition-colors">Book a Keynote</a></li>
             <li><a href="#" className="hover:text-terracotta transition-colors">Published Books</a></li>
+            <li><a href="/media" className="hover:text-terracotta transition-colors">In The Media</a></li>
             <li><a href="mailto:mavism@tb2b.co.za" className="hover:text-terracotta transition-colors">Request a Proposal</a></li>
           </ul>
         </div>
