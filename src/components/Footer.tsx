@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
   return (
     <footer className="bg-slate-900 pt-20 pb-10 border-t border-slate-800">
@@ -20,12 +22,13 @@ export default function Footer() {
         <div className="md:col-span-3 md:col-start-6">
           <h4 className="text-white font-semibold mb-4">Explore</h4>
           <ul className="space-y-3 text-sm text-slate-400">
-            <li><a href="#" className="hover:text-terracotta transition-colors">About Dr. Mazhura</a></li>
-            <li><a href="#" className="hover:text-terracotta transition-colors">Leadership Programmes</a></li>
-            <li><a href="#" className="hover:text-terracotta transition-colors">Book a Keynote</a></li>
-            <li><a href="#" className="hover:text-terracotta transition-colors">Published Books</a></li>
-            <li><a href="/media" className="hover:text-terracotta transition-colors">In The Media</a></li>
-            <li><a href="mailto:mavism@tb2b.co.za" className="hover:text-terracotta transition-colors">Request a Proposal</a></li>
+            <li><Link to="/about" className="hover:text-terracotta transition-colors">About Dr. Mazhura</Link></li>
+            <li><Link to="/services" className="hover:text-terracotta transition-colors">Leadership Programmes</Link></li>
+            <li><Link to="/keynotes" className="hover:text-terracotta transition-colors">Book a Keynote</Link></li>
+            <li><Link to="/books" className="hover:text-terracotta transition-colors">Published Books</Link></li>
+            <li><Link to="/media" className="hover:text-terracotta transition-colors">In The Media</Link></li>
+            <li><Link to="/contact" className="hover:text-terracotta transition-colors">Contact Us</Link></li>
+            <li><Link to="/contact" className="hover:text-terracotta transition-colors">Request a Proposal</Link></li>
           </ul>
         </div>
 

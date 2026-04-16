@@ -12,9 +12,10 @@ import Services from './pages/Services';
 import Keynotes from './pages/Keynotes';
 import Books from './pages/Books';
 import Media from './pages/Media';
+import Contact from './pages/Contact';
 import LeadershipForWomen from './pages/LeadershipForWomen';
 
-const IS_COMING_SOON = true;
+const IS_COMING_SOON = false;
 
 function ComingSoon() {
   return (
@@ -70,6 +71,7 @@ function AppLayout() {
           <Route path="/keynotes" element={<Keynotes />} />
           <Route path="/books" element={<Books />} />
           <Route path="/media" element={<Media />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
       <Footer />

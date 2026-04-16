@@ -29,9 +29,9 @@ export default function Home() {
               Developing Sustainable Leadership in organisations. Shift from burnout and overperformance into aligned, influential, and sustainable leadership.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 items-start sm:items-center">
-              <a href="#services" className="w-full sm:w-auto text-center bg-navy text-white px-8 py-4 rounded font-medium hover:bg-slate-800 hover:shadow-xl transition-all duration-300">
+              <Link to="/contact" className="w-full sm:w-auto text-center bg-navy text-white px-8 py-4 rounded font-medium hover:bg-slate-800 hover:shadow-xl transition-all duration-300">
                 Work With Me
-              </a>
+              </Link>
               <Link to="/leadership-for-women" className="w-full sm:w-auto text-center border-2 border-slate-300 text-navy px-8 py-4 rounded font-medium hover:border-navy transition-all duration-300">
                 Leadership for Women
               </Link>

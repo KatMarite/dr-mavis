@@ -12,6 +12,7 @@ export default function Navbar() {
   const isKeynotes = location.pathname === '/keynotes';
   const isBooks = location.pathname === '/books';
   const isMedia = location.pathname === '/media';
+  const isContact = location.pathname === '/contact';
 
   return (
     <nav className="fixed w-full z-50 transition-all duration-300 bg-alabaster/95 backdrop-blur-md border-b border-slate-200">
@@ -28,13 +29,13 @@ export default function Navbar() {
         </div>
         <div className="hidden md:block">
           {isAbout ? (
-            <a href="#contact" className="bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded shadow-md hover:bg-slate-800 transition-all">
+            <Link to="/contact" className="bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded shadow-md hover:bg-slate-800 transition-all">
               Work With Me
-            </a>
+            </Link>
           ) : isServices ? (
-            <a href="mailto:mavism@tb2b.co.za" className="bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded shadow-md hover:bg-slate-800 transition-all">
+            <Link to="/contact" className="bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded shadow-md hover:bg-slate-800 transition-all">
               Request Proposal
-            </a>
+            </Link>
           ) : isKeynotes ? (
             <a href="#book-dr-mavis" className="bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded shadow-md hover:bg-slate-800 transition-all">
               Book for an Event
@@ -67,13 +68,13 @@ export default function Navbar() {
             <Link to="/media" onClick={closeMobileMenu} className={`text-lg transition-colors ${isMedia ? 'font-bold text-terracotta' : 'font-medium text-slate-600 hover:text-terracotta'}`}>Media</Link>
             <div className="pt-4 border-t border-slate-100">
               {isAbout ? (
-                <a href="#contact" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
+                <Link to="/contact" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
                   Work With Me
-                </a>
+                </Link>
               ) : isServices ? (
-                <a href="mailto:mavism@tb2b.co.za" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
+                <Link to="/contact" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
                   Request Proposal
-                </a>
+                </Link>
               ) : isKeynotes ? (
                 <a href="#book-dr-mavis" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
                   Book for an Event

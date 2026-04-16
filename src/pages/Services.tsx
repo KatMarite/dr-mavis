@@ -69,7 +69,7 @@ export default function Services() {
               </div>
             </Link>
             
-            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+            <a href="/contact" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
               <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Effective Strategic Leadership</h4>
               <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Develop robust organizational strategies, clearly align your teams with overarching goals, and successfully navigate complex business landscapes with measurable results.</p>
@@ -80,7 +80,7 @@ export default function Services() {
               </div>
             </a>
             
-            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+            <a href="/contact" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
               <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Effective Personal Leadership</h4>
               <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Discover your core strengths, clarify personal goals, and establish the behavioural habits necessary to lead yourself effectively before attempting to lead others.</p>
@@ -91,7 +91,7 @@ export default function Services() {
               </div>
             </a>
             
-            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+            <a href="/contact" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
               <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Effective Team Dynamics</h4>
               <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Foster deep psychological safety, resolve long-standing conflicts, and build high-functioning teams that collaborate seamlessly toward mutual success.</p>
@@ -102,7 +102,7 @@ export default function Services() {
               </div>
             </a>
             
-            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+            <a href="/contact" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
               <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Attitude is Everything</h4>
               <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Cultivate a forward-thinking, resilient mindset that turns obstacles into tangible opportunities and inspires everyone around you to perform at their best.</p>
@@ -113,7 +113,7 @@ export default function Services() {
               </div>
             </a>
             
-            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+            <a href="/contact" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
               <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Effective Personal Productivity</h4>
               <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Master time management, prioritization, and sustained focus to maximize your professional output without sacrificing your physical and mental well-being.</p>
@@ -124,7 +124,7 @@ export default function Services() {
               </div>
             </a>
             
-            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+            <a href="/contact" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
               <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Grand Masters of Success</h4>
               <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Learn the foundational principles of historical high achievers and integrate their proven, timeless strategies directly into your modern professional life.</p>
@@ -135,7 +135,7 @@ export default function Services() {
               </div>
             </a>
             
-            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+            <a href="/contact" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
               <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Effective Leadership Development</h4>
               <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Build a reliable pipeline of capable leaders within your own organization through highly structured mentorship, feedback loops, and growth frameworks.</p>
@@ -146,7 +146,7 @@ export default function Services() {
               </div>
             </a>
             
-            <a href="mailto:mavism@tb2b.co.za" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
+            <a href="/contact" className="p-6 bg-white border border-slate-200 rounded-xl hover:border-sage hover:shadow-lg transition-all group relative overflow-hidden flex flex-col h-full">
               <div className="absolute top-0 right-0 w-2 h-full bg-slate-100 group-hover:bg-sage transition-colors"></div>
               <h4 className="text-xl font-bold text-navy group-hover:text-sage transition-colors mb-3">Effective Coaching & Empowerment</h4>
               <p className="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">Equip your managers with the essential coaching skills required to develop, empower, and inspire their direct reports for maximum engagement.</p>
@@ -298,7 +298,7 @@ export default function Services() {
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="text-3xl font-serif text-navy mb-4">Ready to implement Sustainable Leadership?</h2>
           <p className="text-slate-600 mb-8">Let's discuss how we can tailor our programmes or consulting services for your specific organizational needs.</p>
-          <a href="mailto:mavism@tb2b.co.za" className="inline-block bg-terracotta text-white px-8 py-4 rounded font-bold hover:bg-[#c96c51] shadow-lg transition-all">
+          <a href="/contact" className="inline-block bg-terracotta text-white px-8 py-4 rounded font-bold hover:bg-[#c96c51] shadow-lg transition-all">
             Request a Proposal
           </a>
         </div>

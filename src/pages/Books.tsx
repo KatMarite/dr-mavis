@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Books() {
   return (
     <main>
@@ -69,12 +71,14 @@ export default function Books() {
             </div>
 
             {/* Book 5 */}
-            <div className="aspect-[2/3] bg-gradient-to-br from-[#2a3b52] to-navy p-5 flex flex-col justify-between book-spine relative cursor-pointer">
-              <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
-              <div className="my-auto">
+            <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group hover:shadow-xl transition-all duration-300">
+              <img src="/aspire-awaken.jpg" alt="Aspire, Awaken and Actualise Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
+              {/* Fallback overlay in case image goes missing temporarily */}
+              <div className="absolute inset-0 bg-[#2a3b52] flex flex-col justify-between p-5 -z-10">
+                <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
                 <h4 className="font-serif text-lg leading-tight mb-2 text-white">Aspire, Awaken and Actualise</h4>
+                <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
               </div>
-              <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
             </div>
 
             {/* Book 6 */}
@@ -87,12 +91,14 @@ export default function Books() {
             </div>
             
             {/* Book 7 */}
-            <div className="aspect-[2/3] bg-gradient-to-br from-slate-700 to-slate-800 p-5 flex flex-col justify-between book-spine relative cursor-pointer">
-              <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
-              <div className="my-auto">
+            <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group hover:shadow-xl transition-all duration-300">
+              <img src="/career-resilience.jpg" alt="Career Resilience Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
+              {/* Fallback overlay in case image goes missing temporarily */}
+              <div className="absolute inset-0 bg-slate-700 flex flex-col justify-between p-5 -z-10">
+                <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
                 <h4 className="font-serif text-lg leading-tight mb-2 text-white">Career Resilience</h4>
+                <div className="text-xs text-slate-400 border-t border-slate-600 pt-3">Dr Mavis Mazhura</div>
               </div>
-              <div className="text-xs text-slate-400 border-t border-slate-600 pt-3">Dr Mavis Mazhura</div>
             </div>
 
             {/* Book 8 */}
@@ -105,12 +111,14 @@ export default function Books() {
             </div>
 
             {/* Book 9 */}
-            <div className="aspect-[2/3] bg-gradient-to-br from-teal-900 to-slate-900 p-5 flex flex-col justify-between book-spine relative cursor-pointer">
-              <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
-              <div className="my-auto">
+            <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group hover:shadow-xl transition-all duration-300">
+              <img src="/financial-confidence.jpg" alt="Financial Confidence for Her Wellbeing Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
+              {/* Fallback overlay in case image goes missing temporarily */}
+              <div className="absolute inset-0 bg-teal-900 flex flex-col justify-between p-5 -z-10">
+                <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
                 <h4 className="font-serif text-lg leading-tight mb-2 text-white">Financial Confidence for Her Wellbeing</h4>
+                <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
               </div>
-              <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
             </div>
 
           </div>
@@ -150,9 +158,9 @@ export default function Books() {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-serif text-navy mb-4">Equip Your Organization</h2>
           <p className="text-lg text-slate-600 mb-8">Inquire about bulk book orders, organizational licensing, or pairing a publication with a companion masterclass for your leadership team.</p>
-          <a href="#" className="inline-block bg-terracotta text-white px-10 py-4 rounded font-bold shadow-lg hover:bg-[#c96c51] hover:-translate-y-1 transition-all duration-300">
+          <Link to="/contact" className="inline-block bg-terracotta text-white px-10 py-4 rounded font-bold shadow-lg hover:bg-[#c96c51] hover:-translate-y-1 transition-all duration-300">
             Contact Our Team
-          </a>
+          </Link>
         </div>
       </section>
     </main>
