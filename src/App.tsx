@@ -15,7 +15,7 @@ import Media from './pages/Media';
 import Contact from './pages/Contact';
 import LeadershipForWomen from './pages/LeadershipForWomen';
 
-const IS_COMING_SOON = false;
+const IS_COMING_SOON = true;
 
 function ComingSoon() {
   return (
