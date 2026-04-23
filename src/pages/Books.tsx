@@ -35,90 +35,123 @@ export default function Books() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8 mb-20">
             
             {/* Book 1 */}
-            <div className="aspect-[2/3] bg-gradient-to-br from-slate-800 to-slate-900 p-5 flex flex-col justify-between book-spine relative cursor-pointer">
-              <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
-              <div className="my-auto">
-                <h4 className="font-serif text-lg leading-tight mb-2 text-white">Self-Leadership</h4>
+            <div className="flex flex-col gap-3 group">
+              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
+                <img src="/Self-leadership-matters.jpg" alt="Self-Leadership Matters Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-slate-800 flex flex-col justify-between p-5 -z-10">
+                  <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
+                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">Self-Leadership Matters</h4>
+                  <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
+                </div>
               </div>
-              <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
+              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
             </div>
 
             {/* Book 2 */}
-            <div className="aspect-[2/3] bg-gradient-to-br from-terracotta/90 to-red-900 p-5 flex flex-col justify-between book-spine relative cursor-pointer">
-              <div className="text-[10px] uppercase tracking-widest text-white/70 font-bold">Author</div>
-              <div className="my-auto">
-                <h4 className="font-serif text-lg leading-tight mb-2 text-white">Navigating the Rapids and Waves of Life</h4>
+            <div className="flex flex-col gap-3 group">
+              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
+                <img src="/navigating-the-rapids.jpg" alt="Navigating the Rapids and Waves of Life Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-terracotta/90 flex flex-col justify-between p-5 -z-10">
+                  <div className="text-[10px] uppercase tracking-widest text-white/70 font-bold">Author</div>
+                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">Navigating the Rapids and Waves of Life</h4>
+                  <div className="text-xs text-white/70 border-t border-white/20 pt-3">Dr Mavis Mazhura</div>
+                </div>
               </div>
-              <div className="text-xs text-white/70 border-t border-white/20 pt-3">Dr Mavis Mazhura</div>
+              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
             </div>
 
             {/* Book 3 */}
-            <div className="aspect-[2/3] bg-gradient-to-br from-sage/80 to-emerald-900 p-5 flex flex-col justify-between book-spine relative cursor-pointer">
-              <div className="text-[10px] uppercase tracking-widest text-white/70 font-bold">Author</div>
-              <div className="my-auto">
-                <h4 className="font-serif text-lg leading-tight mb-2 text-white">Managing Emotions for Financial Freedom</h4>
+            <div className="flex flex-col gap-3 group">
+              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
+                <img src="/managing-emotions-for-financial-freedom.png" alt="Managing Emotions for Financial Freedom Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-emerald-900 flex flex-col justify-between p-5 -z-10">
+                  <div className="text-[10px] uppercase tracking-widest text-white/70 font-bold">Author</div>
+                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">Managing Emotions for Financial Freedom</h4>
+                  <div className="text-xs text-white/70 border-t border-white/20 pt-3">Dr Mavis Mazhura</div>
+                </div>
               </div>
-              <div className="text-xs text-white/70 border-t border-white/20 pt-3">Dr Mavis Mazhura</div>
+              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
             </div>
 
             {/* Book 4 */}
-            <div className="aspect-[2/3] bg-gradient-to-br from-slate-100 to-slate-300 p-5 flex flex-col justify-between book-spine relative cursor-pointer">
-              <div className="text-[10px] uppercase tracking-widest text-terracotta font-bold">Author</div>
-              <div className="my-auto">
-                <h4 className="font-serif text-lg leading-tight mb-2 text-navy">ABC's of Emotions</h4>
+            <div className="flex flex-col gap-3 group">
+              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
+                <img src="/ABCs-of-emotions.jpg" alt="ABC's of Emotions Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-slate-200 flex flex-col justify-between p-5 -z-10">
+                  <div className="text-[10px] uppercase tracking-widest text-terracotta font-bold">Author</div>
+                  <h4 className="font-serif text-lg leading-tight mb-2 text-navy">ABC's of Emotions</h4>
+                  <div className="text-xs text-slate-500 border-t border-slate-400 pt-3">Dr Mavis Mazhura</div>
+                </div>
               </div>
-              <div className="text-xs text-slate-500 border-t border-slate-400 pt-3">Dr Mavis Mazhura</div>
+              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
             </div>
 
             {/* Book 5 */}
-            <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group hover:shadow-xl transition-all duration-300">
-              <img src="/aspire-awaken.jpg" alt="Aspire, Awaken and Actualise Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
-              {/* Fallback overlay in case image goes missing temporarily */}
-              <div className="absolute inset-0 bg-[#2a3b52] flex flex-col justify-between p-5 -z-10">
-                <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
-                <h4 className="font-serif text-lg leading-tight mb-2 text-white">Aspire, Awaken and Actualise</h4>
-                <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
+            <div className="flex flex-col gap-3 group">
+              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
+                <img src="/aspire-awaken.jpg" alt="Aspire, Awaken and Actualise Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
+                {/* Fallback overlay in case image goes missing temporarily */}
+                <div className="absolute inset-0 bg-[#2a3b52] flex flex-col justify-between p-5 -z-10">
+                  <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
+                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">Aspire, Awaken and Actualise</h4>
+                  <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
+                </div>
               </div>
+              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
             </div>
 
             {/* Book 6 */}
-            <div className="aspect-[2/3] bg-gradient-to-br from-red-900 to-[#4a1515] p-5 flex flex-col justify-between book-spine relative cursor-pointer">
-              <div className="text-[10px] uppercase tracking-widest text-white/50 font-bold">Author</div>
-              <div className="my-auto">
-                <h4 className="font-serif text-lg leading-tight mb-2 text-white">The Change</h4>
+            <div className="flex flex-col gap-3 group">
+              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
+                <img src="/the-change.png" alt="The Change Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-red-900 flex flex-col justify-between p-5 -z-10">
+                  <div className="text-[10px] uppercase tracking-widest text-white/50 font-bold">Author</div>
+                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">The Change</h4>
+                  <div className="text-xs text-white/50 border-t border-white/20 pt-3">Dr Mavis Mazhura</div>
+                </div>
               </div>
-              <div className="text-xs text-white/50 border-t border-white/20 pt-3">Dr Mavis Mazhura</div>
+              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
             </div>
             
             {/* Book 7 */}
-            <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group hover:shadow-xl transition-all duration-300">
-              <img src="/career-resilience.jpg" alt="Career Resilience Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
-              {/* Fallback overlay in case image goes missing temporarily */}
-              <div className="absolute inset-0 bg-slate-700 flex flex-col justify-between p-5 -z-10">
-                <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
-                <h4 className="font-serif text-lg leading-tight mb-2 text-white">Career Resilience</h4>
-                <div className="text-xs text-slate-400 border-t border-slate-600 pt-3">Dr Mavis Mazhura</div>
+            <div className="flex flex-col gap-3 group">
+              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
+                <img src="/career-resilience.jpg" alt="Career Resilience Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
+                {/* Fallback overlay in case image goes missing temporarily */}
+                <div className="absolute inset-0 bg-slate-700 flex flex-col justify-between p-5 -z-10">
+                  <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
+                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">Career Resilience</h4>
+                  <div className="text-xs text-slate-400 border-t border-slate-600 pt-3">Dr Mavis Mazhura</div>
+                </div>
               </div>
+              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
             </div>
 
             {/* Book 8 */}
-            <div className="aspect-[2/3] bg-gradient-to-br from-rose-900 to-red-950 p-5 flex flex-col justify-between book-spine relative cursor-pointer">
-              <div className="text-[10px] uppercase tracking-widest text-rose-200 font-bold">Author</div>
-              <div className="my-auto">
-                <h4 className="font-serif text-lg leading-tight mb-2 text-white">Heart Boundaries</h4>
+            <div className="flex flex-col gap-3 group">
+              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
+                <img src="/heart-boundaries.jpg" alt="Heart Boundaries Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-rose-900 flex flex-col justify-between p-5 -z-10">
+                  <div className="text-[10px] uppercase tracking-widest text-rose-200 font-bold">Author</div>
+                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">Heart Boundaries</h4>
+                  <div className="text-xs text-rose-200 border-t border-rose-800 pt-3">Dr Mavis Mazhura</div>
+                </div>
               </div>
-              <div className="text-xs text-rose-200 border-t border-rose-800 pt-3">Dr Mavis Mazhura</div>
+              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
             </div>
 
             {/* Book 9 */}
-            <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group hover:shadow-xl transition-all duration-300">
-              <img src="/financial-confidence.jpg" alt="Financial Confidence for Her Wellbeing Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
-              {/* Fallback overlay in case image goes missing temporarily */}
-              <div className="absolute inset-0 bg-teal-900 flex flex-col justify-between p-5 -z-10">
-                <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
-                <h4 className="font-serif text-lg leading-tight mb-2 text-white">Financial Confidence for Her Wellbeing</h4>
-                <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
+            <div className="flex flex-col gap-3 group">
+              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
+                <img src="/financial-confidence.jpg" alt="Financial Confidence for Her Wellbeing Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
+                {/* Fallback overlay in case image goes missing temporarily */}
+                <div className="absolute inset-0 bg-teal-900 flex flex-col justify-between p-5 -z-10">
+                  <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
+                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">Financial Confidence for Her Wellbeing</h4>
+                  <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
+                </div>
               </div>
+              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
             </div>
 
           </div>
