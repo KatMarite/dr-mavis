@@ -15,7 +15,7 @@ import Media from './pages/Media';
 import Contact from './pages/Contact';
 import LeadershipForWomen from './pages/LeadershipForWomen';
 
-const IS_COMING_SOON = true;
+const IS_COMING_SOON = false;
 
 function ComingSoon() {
   return (
@@ -25,7 +25,7 @@ function ComingSoon() {
       <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/90 to-navy/80"></div>
       
       <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
-        <img src="/logo.png" alt="Dr Mavis Mazhura" className="h-28 w-auto mb-8 bg-white p-4 rounded-xl shadow-2xl" />
+        <img src="/mavislogo.png" alt="Dr Mavis Mazhura" className="h-40 w-auto mb-8 bg-white p-4 rounded-xl shadow-2xl" />
         <span className="text-sage font-semibold tracking-widest uppercase text-sm mb-4 block">Dr Mavis Mazhura</span>
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white leading-tight mb-6">
           Something extraordinary is coming.

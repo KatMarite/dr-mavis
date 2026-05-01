@@ -18,7 +18,7 @@ export default function Navbar() {
     <nav className="fixed w-full z-50 transition-all duration-300 bg-alabaster/95 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center" onClick={closeMobileMenu}>
-          <img src="/logo.png" alt="Dr Mavis Mazhura Logo" className="h-[72px] lg:h-20 w-auto" />
+          <img src="/mavislogo.png" alt="Dr Mavis Mazhura Logo" className="h-24 lg:h-28 w-auto" />
         </Link>
         <div className="hidden md:flex items-center space-x-8">
           <Link to="/about" className={`text-sm transition-colors ${isAbout ? 'font-bold text-terracotta' : 'font-medium text-slate-600 hover:text-terracotta'}`}>About</Link>

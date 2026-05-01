@@ -7,7 +7,7 @@ export default function Footer() {
         
         {/* Brand Column */}
         <div className="md:col-span-4">
-          <img src="/logo.png" alt="Dr Mavis Mazhura Logo" className="h-24 w-auto mb-6 bg-white p-3 rounded-xl" />
+          <img src="/mavislogo.png" alt="Dr Mavis Mazhura Logo" className="h-32 w-auto mb-6 bg-white p-3 rounded-xl" />
           <p className="text-slate-400 text-sm leading-relaxed mb-6">
             Leadership Psychologist, Behavioural Science & Performance Specialist, helping leaders shift from burnout into aligned, sustainable leadership.
           </p>
