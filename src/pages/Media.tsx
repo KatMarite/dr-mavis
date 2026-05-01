@@ -34,7 +34,7 @@ export default function Media() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* CNBC Africa — Financial Literacy */}
             <article className="group">
               <a href="https://www.cnbcafrica.com/media/6068211222001/mavis-ureke-on-financial-literacy-and-money-management-in-womens-month" target="_blank" rel="noopener noreferrer" className="block">
@@ -53,21 +53,39 @@ export default function Media() {
               </a>
             </article>
 
-            {/* CNBC Africa — Managing Emotions for Financial Freedom */}
+            {/* Interview - Managing Emotions for Financial Freedom */}
             <article className="group">
-              <a href="https://www.cnbcafrica.com/media/CHjDRlmt4nY/mavis-ureke-on-her-book-managing-emotions-for-financial-freedom" target="_blank" rel="noopener noreferrer" className="block">
+              <a href="https://www.youtube.com/watch?v=CxbKpkMQzWk" target="_blank" rel="noopener noreferrer" className="block">
                 <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 bg-slate-900 shadow-lg">
-                  <img src={`https://img.youtube.com/vi/CHjDRlmt4nY/maxresdefault.jpg`} alt="CNBC Africa — Managing Emotions for Financial Freedom" className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
+                  <img src={`https://img.youtube.com/vi/CxbKpkMQzWk/hqdefault.jpg`} alt="Interview — Managing Emotions for Financial Freedom" className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-16 h-16 bg-terracotta/90 text-white rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform shadow-lg pl-1">
                       <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                     </div>
                   </div>
-                  <div className="absolute top-4 left-4 bg-navy text-white text-xs font-bold px-3 py-1 uppercase tracking-wider rounded">CNBC Africa</div>
+                  <div className="absolute top-4 left-4 bg-navy text-white text-xs font-bold px-3 py-1 uppercase tracking-wider rounded">Interview</div>
                 </div>
                 <h3 className="text-2xl font-serif text-navy mb-3 group-hover:text-terracotta transition-colors">Managing Emotions for Financial Freedom</h3>
-                <p className="text-slate-600 mb-4">Practically all personal financial concerns have roots in emotional issues. CNBC Africa's Gugulethu Cele speaks to Dr. Mavis about her book "Managing Emotions for Financial Freedom."</p>
+                <p className="text-slate-600 mb-4">Dr. Mavis discusses her book "Managing Emotions for Financial Freedom" in this featured interview.</p>
+              </a>
+            </article>
+
+            {/* Interview - Navigating the Rapids and waves of Life */}
+            <article className="group">
+              <a href="https://www.youtube.com/watch?v=ILm2BMip2NQ" target="_blank" rel="noopener noreferrer" className="block">
+                <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 bg-slate-900 shadow-lg">
+                  <img src={`https://img.youtube.com/vi/ILm2BMip2NQ/hqdefault.jpg`} alt="Interview — Navigating the Rapids" className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-terracotta/90 text-white rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform shadow-lg pl-1">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                  <div className="absolute top-4 left-4 bg-navy text-white text-xs font-bold px-3 py-1 uppercase tracking-wider rounded">Interview</div>
+                </div>
+                <h3 className="text-2xl font-serif text-navy mb-3 group-hover:text-terracotta transition-colors">Navigating the Rapids and Waves of Life</h3>
+                <p className="text-slate-600 mb-4">International Human behaviour specialist and author Mavis Mazhura on her book Navigating the Rapids.</p>
               </a>
             </article>
           </div>
@@ -179,6 +197,102 @@ export default function Media() {
                 <p className="text-sm text-slate-500 line-clamp-2">Analysis of declining financial confidence trends and actionable insights for building financial resilience.</p>
               </div>
             </div>
+
+            {/* Vimeo — Creating Value */}
+            <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden group hover:shadow-lg transition-shadow">
+              <a href="https://vimeo.com/626294489" target="_blank" rel="noopener noreferrer" className="block h-full">
+                <div className="aspect-video bg-slate-900 relative overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Creating Value & Harnessing Talent" className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-blue-500/90 text-white rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform shadow-lg pl-1">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-6 h-6 bg-blue-500 rounded-sm flex items-center justify-center">
+                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M22.396 7.164c-.093 2.026-1.507 4.8-4.245 8.32C15.323 19.16 12.93 21 10.97 21c-1.214 0-2.24-1.12-3.08-3.36-.56-2.052-1.119-4.1-1.68-6.148-.653-2.426-1.585-3.64-2.8-3.64-.186 0-.7.28-1.54.84l-.934-1.214c1.026-.84 2.1-1.82 3.22-2.94 1.306-1.214 2.24-1.913 2.8-2.1 1.773-.56 2.94-.047 3.5 1.54.466 1.306.84 2.893 1.12 4.76.373 2.333.653 3.64.84 3.92.28.373.653.56 1.12.56.653 0 1.586-.7 2.8-2.1 1.213-1.4 1.913-2.52 2.1-3.36.28-1.214-.28-1.82-1.68-1.82-.653 0-1.306.187-1.96.56 1.213-3.733 3.64-5.413 7.28-5.04 2.52.28 3.36 1.96 2.52 5.04z"/></svg>
+                    </div>
+                    <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Vimeo</span>
+                  </div>
+                  <h4 className="font-bold text-navy group-hover:text-terracotta transition-colors mb-2 line-clamp-2">Creating Value & Harnessing Talent</h4>
+                  <p className="text-sm text-slate-500 line-clamp-2">Speaking on creating value and harnessing the talent of temporary staff for organisational success.</p>
+                </div>
+              </a>
+            </div>
+
+            {/* YouTube — Psychological Safety */}
+            <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden group hover:shadow-lg transition-shadow">
+              <div className="aspect-video bg-slate-900 relative overflow-hidden">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/SebV4qkPaGc"
+                  title="Resilience and Reinvention: Psychological Safety in the Workplace"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="p-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-6 h-6 bg-red-600 rounded-sm flex items-center justify-center">
+                    <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                  <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">YouTube</span>
+                </div>
+                <h4 className="font-bold text-navy group-hover:text-terracotta transition-colors mb-2 line-clamp-2">Resilience and Reinvention</h4>
+                <p className="text-sm text-slate-500 line-clamp-2">Speaking on Resilience and Reinvention: Psychological Safety in the Workplace.</p>
+              </div>
+            </div>
+
+            {/* YouTube — Psychological Safety in Times of Change */}
+            <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden group hover:shadow-lg transition-shadow">
+              <div className="aspect-video bg-slate-900 relative overflow-hidden">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/Fji_XG13U2s"
+                  title="Psychological Safety in Times of Change"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="p-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-6 h-6 bg-red-600 rounded-sm flex items-center justify-center">
+                    <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                  <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">YouTube</span>
+                </div>
+                <h4 className="font-bold text-navy group-hover:text-terracotta transition-colors mb-2 line-clamp-2">Psychological Safety in Times of Change</h4>
+                <p className="text-sm text-slate-500 line-clamp-2">A keynote focus on maintaining psychological safety and resilience during periods of transition.</p>
+              </div>
+            </div>
+
+            {/* YouTube — Career Resilience */}
+            <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden group hover:shadow-lg transition-shadow">
+              <div className="aspect-video bg-slate-900 relative overflow-hidden">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/rg2uJ1mCtE0"
+                  title="Career Resilience for your Wellbeing- Dr Mavis Mazhura"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="p-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-6 h-6 bg-red-600 rounded-sm flex items-center justify-center">
+                    <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                  <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">YouTube</span>
+                </div>
+                <h4 className="font-bold text-navy group-hover:text-terracotta transition-colors mb-2 line-clamp-2">Career Resilience for your Wellbeing</h4>
+                <p className="text-sm text-slate-500 line-clamp-2">Building capacity to navigate the changing workplace and safeguard your well-being.</p>
+              </div>
+            </div>
+
+
           </div>
         </div>
       </section>
@@ -226,7 +340,7 @@ export default function Media() {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-serif text-white mb-4">Media Inquiries & Interviews</h2>
           <p className="text-slate-400 mb-8">Dr. Mazhura is available for expert commentary, podcast interviews, and television appearances covering human behavior and executive performance.</p>
-          <Link to="/contact" className="inline-block bg-terracotta text-white px-8 py-4 rounded font-bold hover:bg-[#c96c51] shadow-lg transition-all">
+          <Link to="/contact#contact-form" className="inline-block bg-terracotta text-white px-8 py-4 rounded font-bold hover:bg-[#c96c51] shadow-lg transition-all">
             Contact Media Team
           </Link>
         </div>

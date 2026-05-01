@@ -29,7 +29,7 @@ export default function Home() {
               Developing Sustainable Leadership in organisations. Shift from burnout and overperformance into aligned, influential, and sustainable leadership.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 items-start sm:items-center">
-              <Link to="/contact" className="w-full sm:w-auto text-center bg-navy text-white px-8 py-4 rounded font-medium hover:bg-slate-800 hover:shadow-xl transition-all duration-300">
+              <Link to="/contact#contact-form" className="w-full sm:w-auto text-center bg-navy text-white px-8 py-4 rounded font-medium hover:bg-slate-800 hover:shadow-xl transition-all duration-300">
                 Work With Me
               </Link>
               <Link to="/leadership-for-women" className="w-full sm:w-auto text-center border-2 border-slate-300 text-navy px-8 py-4 rounded font-medium hover:border-navy transition-all duration-300">
@@ -242,9 +242,9 @@ export default function Home() {
           <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
             Always "on", delivering results, but feeling emotionally exhausted? Discover your baseline and learn what needs to shift.
           </p>
-          <a href="#" className="inline-block bg-sage text-navy px-10 py-5 rounded-md font-bold text-lg shadow-[0_0_20px_rgba(134,239,172,0.3)] hover:bg-white hover:shadow-xl transition-all duration-300">
+          <Link to="/scorecard" className="inline-block bg-sage text-navy px-10 py-5 rounded-md font-bold text-lg shadow-[0_0_20px_rgba(134,239,172,0.3)] hover:bg-white hover:shadow-xl transition-all duration-300">
             Take the Sustainable Leadership Scorecard
-          </a>
+          </Link>
           <p className="mt-6 text-slate-400 text-sm">Takes less than 3 minutes. Receive immediate actionable insights.</p>
         </motion.div>
       </section>

@@ -29,11 +29,11 @@ export default function Navbar() {
         </div>
         <div className="hidden md:block">
           {isAbout ? (
-            <Link to="/contact" className="bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded shadow-md hover:bg-slate-800 transition-all">
+            <Link to="/contact#contact-form" className="bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded shadow-md hover:bg-slate-800 transition-all">
               Work With Me
             </Link>
           ) : isServices ? (
-            <Link to="/contact" className="bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded shadow-md hover:bg-slate-800 transition-all">
+            <Link to="/contact#contact-form" className="bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded shadow-md hover:bg-slate-800 transition-all">
               Request Proposal
             </Link>
           ) : isKeynotes ? (
@@ -45,9 +45,9 @@ export default function Navbar() {
               Bulk Orders
             </a>
           ) : (
-            <a href="#scorecard" className="bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded shadow-md hover:shadow-lg hover:bg-slate-800 transition-all">
+            <Link to="/scorecard" className="bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded shadow-md hover:shadow-lg hover:bg-slate-800 transition-all">
               Take the Scorecard
-            </a>
+            </Link>
           )}
         </div>
         <button className="md:hidden text-navy p-2" onClick={toggleMobileMenu}>
@@ -68,11 +68,11 @@ export default function Navbar() {
             <Link to="/media" onClick={closeMobileMenu} className={`text-lg transition-colors ${isMedia ? 'font-bold text-terracotta' : 'font-medium text-slate-600 hover:text-terracotta'}`}>Media</Link>
             <div className="pt-4 border-t border-slate-100">
               {isAbout ? (
-                <Link to="/contact" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
+                <Link to="/contact#contact-form" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
                   Work With Me
                 </Link>
               ) : isServices ? (
-                <Link to="/contact" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
+                <Link to="/contact#contact-form" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
                   Request Proposal
                 </Link>
               ) : isKeynotes ? (
@@ -84,9 +84,9 @@ export default function Navbar() {
                   Bulk Orders
                 </a>
               ) : (
-                <a href="#scorecard" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
+                <Link to="/scorecard" onClick={closeMobileMenu} className="block w-full text-center bg-navy text-white text-lg font-semibold px-5 py-3 rounded shadow-md hover:bg-slate-800 transition-all">
                   Take the Scorecard
-                </a>
+                </Link>
               )}
             </div>
           </div>

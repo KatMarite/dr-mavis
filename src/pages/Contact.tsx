@@ -22,7 +22,7 @@ export default function Contact() {
       </section>
 
       {/* 2. Main Content */}
-      <section className="py-24 bg-white relative">
+      <section id="contact-form" className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
           
           {/* Contact Details (Left Column) */}

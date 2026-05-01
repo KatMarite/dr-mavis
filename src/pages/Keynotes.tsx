@@ -128,7 +128,7 @@ export default function Keynotes() {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-serif text-white mb-6">Bring Dr. Mazhura to your next event.</h2>
           <p className="text-lg text-white/90 mb-10">Whether it's a global conference keynote or an intimate corporate masterclass, start the conversation today.</p>
-          <Link to="/contact" className="inline-block bg-navy text-white px-10 py-5 rounded font-bold shadow-xl hover:bg-slate-800 hover:-translate-y-1 transition-all duration-300">
+          <Link to="/contact#contact-form" className="inline-block bg-navy text-white px-10 py-5 rounded font-bold shadow-xl hover:bg-slate-800 hover:-translate-y-1 transition-all duration-300">
             Request a Proposal
           </Link>
         </div>

@@ -3,9 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -14,8 +16,10 @@ import Books from './pages/Books';
 import Media from './pages/Media';
 import Contact from './pages/Contact';
 import LeadershipForWomen from './pages/LeadershipForWomen';
+import Scorecard from './pages/Scorecard';
+import Apply from './pages/Apply';
 
-const IS_COMING_SOON = true;
+const IS_COMING_SOON = false;
 
 function ComingSoon() {
   return (
@@ -44,9 +48,23 @@ function ComingSoon() {
   );
 }
 
+
 function AppLayout() {
   const location = useLocation();
   const isLandingPage = location.pathname === '/leadership-for-women';
+
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const el = document.getElementById(location.hash.slice(1));
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname, location.hash]);
 
   if (IS_COMING_SOON) {
     return <ComingSoon />;
@@ -72,9 +90,12 @@ function AppLayout() {
           <Route path="/books" element={<Books />} />
           <Route path="/media" element={<Media />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/scorecard" element={<Scorecard />} />
+          <Route path="/apply" element={<Apply />} />
         </Routes>
       </div>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

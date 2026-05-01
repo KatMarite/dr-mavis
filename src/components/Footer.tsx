@@ -28,7 +28,7 @@ export default function Footer() {
             <li><Link to="/books" className="hover:text-terracotta transition-colors">Published Books</Link></li>
             <li><Link to="/media" className="hover:text-terracotta transition-colors">In The Media</Link></li>
             <li><Link to="/contact" className="hover:text-terracotta transition-colors">Contact Us</Link></li>
-            <li><Link to="/contact" className="hover:text-terracotta transition-colors">Request a Proposal</Link></li>
+            <li><Link to="/contact#contact-form" className="hover:text-terracotta transition-colors">Request a Proposal</Link></li>
           </ul>
         </div>
 

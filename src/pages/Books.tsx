@@ -191,7 +191,7 @@ export default function Books() {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-serif text-navy mb-4">Equip Your Organization</h2>
           <p className="text-lg text-slate-600 mb-8">Inquire about bulk book orders, organizational licensing, or pairing a publication with a companion masterclass for your leadership team.</p>
-          <Link to="/contact" className="inline-block bg-terracotta text-white px-10 py-4 rounded font-bold shadow-lg hover:bg-[#c96c51] hover:-translate-y-1 transition-all duration-300">
+          <Link to="/contact#contact-form" className="inline-block bg-terracotta text-white px-10 py-4 rounded font-bold shadow-lg hover:bg-[#c96c51] hover:-translate-y-1 transition-all duration-300">
             Contact Our Team
           </Link>
         </div>

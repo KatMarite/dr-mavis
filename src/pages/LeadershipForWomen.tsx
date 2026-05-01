@@ -23,9 +23,9 @@ export default function LeadershipForWomen() {
             <a href="#testimonials" className="text-sm font-medium text-slate-600 hover:text-terracotta transition-colors">Success Stories</a>
           </div>
           <div className="flex items-center">
-            <a href="#apply" className="hidden md:inline-block bg-terracotta text-white text-sm font-semibold px-6 py-2.5 rounded shadow hover:bg-[#c96c51] transition-all">
+            <Link to="/apply" className="hidden md:inline-block bg-terracotta text-white text-sm font-semibold px-6 py-2.5 rounded shadow hover:bg-[#c96c51] transition-all">
               Apply Now
-            </a>
+            </Link>
             <button className="md:hidden text-navy p-2 ml-4" onClick={toggleMobileMenu}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8">
                 <path strokeLinecap="round" strokeLinejoin="round" d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"} />
@@ -43,9 +43,9 @@ export default function LeadershipForWomen() {
               <a href="#process" onClick={closeMobileMenu} className="text-lg font-medium text-slate-600 hover:text-terracotta transition-colors">The Process</a>
               <a href="#testimonials" onClick={closeMobileMenu} className="text-lg font-medium text-slate-600 hover:text-terracotta transition-colors">Success Stories</a>
               <div className="pt-4 border-t border-slate-100">
-                <a href="#apply" onClick={closeMobileMenu} className="block w-full text-center bg-terracotta text-white text-base font-semibold px-5 py-3 rounded shadow-md transition-all">
+                <Link to="/apply" onClick={closeMobileMenu} className="block w-full text-center bg-terracotta text-white text-base font-semibold px-5 py-3 rounded shadow-md transition-all">
                   Apply Now
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -77,9 +77,9 @@ export default function LeadershipForWomen() {
               A structured 12-week leadership process designed for senior women leaders ready to rebuild executive presence, internal authority, and balance empathy with the "hard" requirements of B2B leadership.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 items-center">
-              <a href="#apply" className="w-full sm:w-auto text-center bg-sage text-navy px-8 py-4 rounded font-bold hover:bg-white hover:shadow-lg transition-all duration-300">
+              <Link to="/apply" className="w-full sm:w-auto text-center bg-sage text-navy px-8 py-4 rounded font-bold hover:bg-white hover:shadow-lg transition-all duration-300">
                 Apply Now
-              </a>
+              </Link>
               <a href="mailto:mavism@tb2b.co.za" className="w-full sm:w-auto text-center border-2 border-slate-500 text-white px-8 py-4 rounded font-medium hover:border-white transition-all duration-300">
                 Book a Discovery Call
               </a>
@@ -394,9 +394,9 @@ export default function LeadershipForWomen() {
           <div className="bg-white p-8 md:p-12 rounded-2xl shadow-2xl max-w-xl mx-auto inline-block w-full">
             <p className="text-slate-500 mb-8 font-medium">Choose how you'd like to begin your journey:</p>
             <div className="flex flex-col gap-4">
-              <a href="#" className="w-full bg-navy text-white px-8 py-4 rounded font-bold text-lg hover:bg-slate-800 transition-colors">
+              <Link to="/apply" className="w-full bg-navy text-white px-8 py-4 rounded font-bold text-lg hover:bg-slate-800 transition-colors">
                 Apply Now
-              </a>
+              </Link>
               <div className="relative flex items-center py-2">
                 <div className="flex-grow border-t border-slate-200"></div>
                 <span className="flex-shrink-0 mx-4 text-slate-400 text-sm font-semibold uppercase">Or</span>
