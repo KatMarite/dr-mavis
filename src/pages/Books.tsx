@@ -44,7 +44,7 @@ export default function Books() {
                   <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
                 </div>
               </div>
-              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
+              <a href="https://www.amazon.com/Self-Leadership-Matters-Accepting-Responsibility-Accountability-ebook/dp/B074DB9Z9W" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
             </div>
 
             {/* Book 2 */}
@@ -57,7 +57,7 @@ export default function Books() {
                   <div className="text-xs text-white/70 border-t border-white/20 pt-3">Dr Mavis Mazhura</div>
                 </div>
               </div>
-              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
+              <a href="https://www.amazon.com/Navigating-Rapids-Waves-Life-Managing-ebook/dp/B0792P2TLS" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
             </div>
 
             {/* Book 3 */}
@@ -70,7 +70,7 @@ export default function Books() {
                   <div className="text-xs text-white/70 border-t border-white/20 pt-3">Dr Mavis Mazhura</div>
                 </div>
               </div>
-              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
+              <a href="https://www.amazon.com/Managing-Emotions-Financial-Freedom-Invisible-ebook/dp/B019NEUYDQ" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
             </div>
 
             {/* Book 4 */}
@@ -83,7 +83,7 @@ export default function Books() {
                   <div className="text-xs text-slate-500 border-t border-slate-400 pt-3">Dr Mavis Mazhura</div>
                 </div>
               </div>
-              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
             </div>
 
             {/* Book 5 */}
@@ -97,7 +97,7 @@ export default function Books() {
                   <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
                 </div>
               </div>
-              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
+              <a href="https://www.amazon.com/Aspire-Awaken-Actualise-Journeys-Transformation-ebook/dp/B0791XHN73" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
             </div>
 
             {/* Book 6 */}
@@ -110,7 +110,7 @@ export default function Books() {
                   <div className="text-xs text-white/50 border-t border-white/20 pt-3">Dr Mavis Mazhura</div>
                 </div>
               </div>
-              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
             </div>
             
             {/* Book 7 */}
@@ -124,7 +124,7 @@ export default function Books() {
                   <div className="text-xs text-slate-400 border-t border-slate-600 pt-3">Dr Mavis Mazhura</div>
                 </div>
               </div>
-              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
+              <a href="https://www.amazon.com/CAREER-RESILIENCE-WELL-BEING-MAVIS-MAZHURA/dp/1776335775" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
             </div>
 
             {/* Book 8 */}
@@ -137,7 +137,7 @@ export default function Books() {
                   <div className="text-xs text-rose-200 border-t border-rose-800 pt-3">Dr Mavis Mazhura</div>
                 </div>
               </div>
-              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
             </div>
 
             {/* Book 9 */}
@@ -151,7 +151,7 @@ export default function Books() {
                   <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
                 </div>
               </div>
-              <a href="#" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy via Payfast</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
             </div>
 
           </div>
