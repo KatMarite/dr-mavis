@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { submitToWeb3Forms } from '../utils/web3forms';
 
 // --- Scorecard Data ---
 const QUESTIONS = [
@@ -63,20 +64,36 @@ export default function Scorecard() {
     }, 300);
   };
 
-  const handleLeadSubmit = (e: React.FormEvent) => {
+  const handleLeadSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call to email marketing platform
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setStep('results');
-    }, 1500);
+
+    // Calculate results before submission so we can include them in the email
+    const totalPoints = (Object.values(answers) as number[]).reduce((acc: number, curr: number) => acc + curr, 0);
+    const maxPoints = QUESTIONS.length * 4;
+    const score = Math.round((totalPoints / maxPoints) * 100);
+    const archetype = score >= 80 ? 'The Aligned Visionary' : score >= 60 ? 'The Resilient Driver' : 'The Overextended Achiever';
+
+    try {
+      await submitToWeb3Forms({
+        subject: `New Scorecard Lead — ${leadData.name} (${score}%)`,
+        from_name: leadData.name,
+        Name: leadData.name,
+        Email: leadData.email,
+        'Scorecard Score': `${score}%`,
+        'Leadership Archetype': archetype,
+      });
+    } catch {
+      // Still show results even if email fails — the user completed the assessment
+    }
+
+    setIsSubmitting(false);
+    setStep('results');
   };
 
   // Calculations
   const calculateScore = () => {
-    const totalPoints = Object.values(answers).reduce((acc, curr) => acc + curr, 0);
+    const totalPoints = (Object.values(answers) as number[]).reduce((acc: number, curr: number) => acc + curr, 0);
     const maxPoints = QUESTIONS.length * 4;
     return Math.round((totalPoints / maxPoints) * 100);
   };

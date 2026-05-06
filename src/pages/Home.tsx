@@ -61,22 +61,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. Trust Bar */}
+      {/* 2. Trust Bar — Scrolling Logo Marquee */}
       <section className="bg-white py-10 border-y border-slate-100 overflow-hidden">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-7xl mx-auto px-6"
         >
-          <p className="text-center text-xs font-semibold text-slate-400 uppercase tracking-widest mb-6">Trusted by global organisations</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            <div className="text-xl font-bold font-serif text-slate-800 flex items-center gap-1"><div className="w-3 h-3 rounded-full bg-red-500"></div><div className="w-3 h-3 rounded-full bg-yellow-500 -ml-2 mix-blend-multiply"></div><span className="ml-1">Mastercard</span></div>
-            <div className="text-xl font-black tracking-tighter text-green-700">NEDBANK</div>
-            <div className="text-lg font-serif italic text-slate-800">Allan Gray</div>
-            <div className="text-xl font-bold tracking-widest text-slate-700">ASTRON</div>
-            <div className="text-lg font-bold text-blue-600">RAND WATER</div>
+          <p className="text-center text-xs font-semibold text-slate-400 uppercase tracking-widest mb-8 px-6">Trusted by global organisations</p>
+          <div className="relative w-full overflow-hidden">
+            {/* Fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+            {/* Scrolling track — duplicated for seamless loop */}
+            <div className="flex animate-marquee hover:[animation-play-state:paused]">
+              {[0, 1].map((set) => (
+                <div key={set} className="flex shrink-0 items-center gap-16 px-8">
+                  {[
+                    { src: '/logos/Allan gray logo.png', alt: 'Allan Gray' },
+                    { src: '/logos/CAA logo.png', alt: 'CAA' },
+                    { src: '/logos/GP logo.png', alt: 'Gauteng Province' },
+                    { src: '/logos/NBCRFLI logo.png', alt: 'NBCRFLI' },
+                    { src: '/logos/lactalis logo.png', alt: 'Lactalis' },
+                    { src: '/logos/lmi logo.png', alt: 'LMI' },
+                    { src: '/logos/rand park logo.png', alt: 'Rand Park' },
+                    { src: '/logos/teta logo.png', alt: 'TETA' },
+                    { src: '/logos/thungela logo.png', alt: 'Thungela' },
+                  ].map((logo) => (
+                    <img
+                      key={`${set}-${logo.alt}`}
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="h-12 md:h-14 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </section>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web3Forms API Test</title>
+  <style>
+    body { font-family: system-ui; max-width: 600px; margin: 40px auto; padding: 20px; background: #f8f9fa; }
+    h1 { color: #1e293b; }
+    .test-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; margin: 16px 0; }
+    button { background: #1e293b; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; }
+    button:hover { background: #334155; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .result { margin-top: 12px; padding: 12px; border-radius: 8px; font-size: 14px; display: none; }
+    .success { background: #dcfce7; color: #166534; display: block; }
+    .error { background: #fee2e2; color: #991b1b; display: block; }
+    .loading { background: #dbeafe; color: #1e40af; display: block; }
+    code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>🧪 Web3Forms Integration Test</h1>
+  <p>Click each button to test that form submissions reach your inbox at the email linked to access key <code>30a79b40-...</code></p>
+
+  <div class="test-card">
+    <h3>1. Contact Inquiry Form</h3>
+    <p>Simulates a contact form submission</p>
+    <button onclick="testForm('contact')">Test Contact Form</button>
+    <div id="contact-result" class="result"></div>
+  </div>
+
+  <div class="test-card">
+    <h3>2. Leadership Application Form</h3>
+    <p>Simulates an application submission</p>
+    <button onclick="testForm('apply')">Test Apply Form</button>
+    <div id="apply-result" class="result"></div>
+  </div>
+
+  <div class="test-card">
+    <h3>3. Scorecard Lead Capture</h3>
+    <p>Simulates a scorecard lead capture</p>
+    <button onclick="testForm('scorecard')">Test Scorecard Form</button>
+    <div id="scorecard-result" class="result"></div>
+  </div>
+
+  <div class="test-card">
+    <h3>4. Newsletter Subscription</h3>
+    <p>Simulates a newsletter signup</p>
+    <button onclick="testForm('newsletter')">Test Newsletter Form</button>
+    <div id="newsletter-result" class="result"></div>
+  </div>
+
+  <script>
+    const ACCESS_KEY = '30a79b40-94e8-4699-8ed4-33feca297c3d';
+
+    const testPayloads = {
+      contact: {
+        subject: '[TEST] New Website Inquiry — Book a Keynote',
+        from_name: 'Test User',
+        'First Name': 'Test',
+        'Last Name': 'User',
+        Email: 'test@example.com',
+        Organization: 'Test Corp',
+        'Inquiry Type': 'Book a Keynote',
+        Message: 'This is a test submission from the Contact form.'
+      },
+      apply: {
+        subject: '[TEST] New Leadership Application — Jane Doe',
+        from_name: 'Jane Doe',
+        'First Name': 'Jane',
+        'Last Name': 'Doe',
+        Email: 'jane.doe@test.com',
+        Phone: '+27 12 345 6789',
+        'Job Title': 'Senior Manager',
+        'Company': 'Test Organization',
+        'Primary Motivation': 'Test motivation for the leadership programme.',
+        'Leadership Challenge': 'Test leadership challenge description.'
+      },
+      scorecard: {
+        subject: '[TEST] New Scorecard Lead — Alex Smith (75%)',
+        from_name: 'Alex Smith',
+        Name: 'Alex Smith',
+        Email: 'alex@test.com',
+        'Scorecard Score': '75%',
+        'Leadership Archetype': 'The Resilient Driver'
+      },
+      newsletter: {
+        subject: '[TEST] New Newsletter Subscriber',
+        from_name: 'Newsletter Signup',
+        Email: 'subscriber@test.com',
+        Source: 'Footer Newsletter Form'
+      }
+    };
+
+    async function testForm(type) {
+      const resultEl = document.getElementById(type + '-result');
+      const btn = event.target;
+      
+      resultEl.className = 'result loading';
+      resultEl.textContent = '⏳ Sending...';
+      btn.disabled = true;
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ access_key: ACCESS_KEY, ...testPayloads[type] })
+        });
+        const data = await response.json();
+
+        if (data.success) {
+          resultEl.className = 'result success';
+          resultEl.textContent = '✅ SUCCESS — ' + data.message + ' (Check your inbox!)';
+        } else {
+          resultEl.className = 'result error';
+          resultEl.textContent = '❌ FAILED — ' + (data.message || 'Unknown error');
+        }
+      } catch (err) {
+        resultEl.className = 'result error';
+        resultEl.textContent = '❌ ERROR — ' + err.message;
+      }
+
+      btn.disabled = false;
+    }
+  </script>
+</body>
+</html>
