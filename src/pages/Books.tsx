@@ -1,6 +1,170 @@
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
+interface Book {
+  id: number;
+  title: string;
+  cover: string;
+  amazonUrl: string;
+  synopsis: string;
+  year?: string;
+  fallbackBg: string;
+  fallbackLabelColor: string;
+  fallbackTitleColor: string;
+  fallbackMetaColor: string;
+  fallbackBorderColor: string;
+}
+
+const books: Book[] = [
+  {
+    id: 1,
+    title: 'Self-Leadership Matters',
+    cover: '/Self-leadership-matters.jpg',
+    amazonUrl: 'https://www.amazon.com/Self-Leadership-Matters-Accepting-Responsibility-Accountability-ebook/dp/B074DB9Z9W',
+    synopsis: 'A transformative guide on accepting responsibility and accountability for your own growth. This book explores how self-leadership is the foundation of all great leadership — equipping readers with frameworks to master their inner world before leading others.',
+    year: '2017',
+    fallbackBg: 'bg-slate-800',
+    fallbackLabelColor: 'text-sage',
+    fallbackTitleColor: 'text-white',
+    fallbackMetaColor: 'text-slate-400',
+    fallbackBorderColor: 'border-slate-700',
+  },
+  {
+    id: 2,
+    title: 'Navigating the Rapids and Waves of Life',
+    cover: '/navigating-the-rapids.jpg',
+    amazonUrl: 'https://www.amazon.com/Navigating-Rapids-Waves-Life-Managing-ebook/dp/B0792P2TLS',
+    synopsis: 'Life is unpredictable. This book provides practical strategies for managing the turbulent seasons of change, loss, and uncertainty. Learn how to stay grounded, build resilience, and emerge stronger from every challenge.',
+    year: '2018',
+    fallbackBg: 'bg-terracotta/90',
+    fallbackLabelColor: 'text-white/70',
+    fallbackTitleColor: 'text-white',
+    fallbackMetaColor: 'text-white/70',
+    fallbackBorderColor: 'border-white/20',
+  },
+  {
+    id: 3,
+    title: 'Managing Emotions for Financial Freedom',
+    cover: '/managing-emotions-for-financial-freedom.png',
+    amazonUrl: 'https://www.amazon.com/Managing-Emotions-Financial-Freedom-Invisible-ebook/dp/B019NEUYDQ',
+    synopsis: 'Discover the invisible barriers between you and financial freedom. Dr. Mazhura reveals how unmanaged emotions drive poor financial decisions and offers a proven path to breaking free from self-sabotaging money patterns.',
+    year: '2015',
+    fallbackBg: 'bg-emerald-900',
+    fallbackLabelColor: 'text-white/70',
+    fallbackTitleColor: 'text-white',
+    fallbackMetaColor: 'text-white/70',
+    fallbackBorderColor: 'border-white/20',
+  },
+  {
+    id: 4,
+    title: "ABC's of Emotions",
+    cover: '/ABCs-of-emotions.jpg',
+    amazonUrl: '#',
+    synopsis: 'An accessible and insightful guide to understanding the full spectrum of human emotions. From anger to zeal, Dr. Mazhura breaks down the emotional alphabet and teaches readers how to identify, process, and channel their feelings constructively.',
+    fallbackBg: 'bg-slate-200',
+    fallbackLabelColor: 'text-terracotta',
+    fallbackTitleColor: 'text-navy',
+    fallbackMetaColor: 'text-slate-500',
+    fallbackBorderColor: 'border-slate-400',
+  },
+  {
+    id: 5,
+    title: 'Aspire, Awaken and Actualise',
+    cover: '/aspire-awaken.jpg',
+    amazonUrl: 'https://www.amazon.com/Aspire-Awaken-Actualise-Journeys-Transformation-ebook/dp/B0791XHN73',
+    synopsis: 'Journeys of transformation unfold in this powerful anthology. Through real stories and research-backed insights, this book guides readers through the three stages of personal evolution — aspiring for more, awakening to their potential, and actualising their purpose.',
+    year: '2018',
+    fallbackBg: 'bg-[#2a3b52]',
+    fallbackLabelColor: 'text-sage',
+    fallbackTitleColor: 'text-white',
+    fallbackMetaColor: 'text-slate-400',
+    fallbackBorderColor: 'border-slate-700',
+  },
+  {
+    id: 6,
+    title: 'The Change',
+    cover: '/the-change.png',
+    amazonUrl: '#',
+    synopsis: 'A compelling exploration of what it truly takes to change — not just behaviour, but identity. Dr. Mazhura draws on psychology, neuroscience, and leadership theory to present a roadmap for lasting personal and professional transformation.',
+    fallbackBg: 'bg-red-900',
+    fallbackLabelColor: 'text-white/50',
+    fallbackTitleColor: 'text-white',
+    fallbackMetaColor: 'text-white/50',
+    fallbackBorderColor: 'border-white/20',
+  },
+  {
+    id: 7,
+    title: 'Career Resilience & Well-Being',
+    cover: '/career-resilience.jpg',
+    amazonUrl: 'https://www.amazon.com/CAREER-RESILIENCE-WELL-BEING-MAVIS-MAZHURA/dp/1776335775',
+    synopsis: 'In an era of burnout and constant disruption, career resilience is not optional — it is essential. This book provides leaders and professionals with evidence-based strategies to sustain performance, protect well-being, and thrive through organisational change.',
+    year: '2020',
+    fallbackBg: 'bg-slate-700',
+    fallbackLabelColor: 'text-sage',
+    fallbackTitleColor: 'text-white',
+    fallbackMetaColor: 'text-slate-400',
+    fallbackBorderColor: 'border-slate-600',
+  },
+  {
+    id: 8,
+    title: 'Heart Boundaries',
+    cover: '/heart-boundaries.jpg',
+    amazonUrl: '#',
+    synopsis: 'Boundaries are the architecture of healthy relationships. This book teaches readers how to set, communicate, and maintain boundaries without guilt — protecting their emotional energy while deepening authentic connection.',
+    fallbackBg: 'bg-rose-900',
+    fallbackLabelColor: 'text-rose-200',
+    fallbackTitleColor: 'text-white',
+    fallbackMetaColor: 'text-rose-200',
+    fallbackBorderColor: 'border-rose-800',
+  },
+  {
+    id: 9,
+    title: 'Financial Confidence for Her Wellbeing',
+    cover: '/financial-confidence.jpg',
+    amazonUrl: '#',
+    synopsis: 'Written specifically for women navigating the intersection of financial health and emotional well-being. Dr. Mazhura provides a holistic framework for building financial confidence, overcoming money anxiety, and creating sustainable wealth.',
+    fallbackBg: 'bg-teal-900',
+    fallbackLabelColor: 'text-sage',
+    fallbackTitleColor: 'text-white',
+    fallbackMetaColor: 'text-slate-400',
+    fallbackBorderColor: 'border-slate-700',
+  },
+];
+
 export default function Books() {
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const openPreview = (book: Book) => {
+    setSelectedBook(book);
+    // Small delay to allow the element to mount before animating in
+    requestAnimationFrame(() => setIsModalVisible(true));
+  };
+
+  const closePreview = useCallback(() => {
+    setIsModalVisible(false);
+    setTimeout(() => setSelectedBook(null), 300); // match transition duration
+  }, []);
+
+  // Close on Escape key
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && selectedBook) closePreview();
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [selectedBook, closePreview]);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (selectedBook) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [selectedBook]);
+
   return (
     <main>
       {/* 1. Hero Section */}
@@ -33,127 +197,40 @@ export default function Books() {
 
           {/* CSS Bookshelf Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8 mb-20">
-            
-            {/* Book 1 */}
-            <div className="flex flex-col gap-3 group">
-              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
-                <img src="/Self-leadership-matters.jpg" alt="Self-Leadership Matters Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-slate-800 flex flex-col justify-between p-5 -z-10">
-                  <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
-                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">Self-Leadership Matters</h4>
-                  <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
+            {books.map((book) => (
+              <div key={book.id} className="flex flex-col gap-3 group">
+                <div
+                  className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300"
+                  onClick={() => openPreview(book)}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Preview ${book.title}`}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') openPreview(book); }}
+                >
+                  <img src={book.cover} alt={`${book.title} Book Cover`} className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
+                  {/* Fallback overlay */}
+                  <div className={`absolute inset-0 ${book.fallbackBg} flex flex-col justify-between p-5 -z-10`}>
+                    <div className={`text-[10px] uppercase tracking-widest ${book.fallbackLabelColor} font-bold`}>Author</div>
+                    <h4 className={`font-serif text-lg leading-tight mb-2 ${book.fallbackTitleColor}`}>{book.title}</h4>
+                    <div className={`text-xs ${book.fallbackMetaColor} border-t ${book.fallbackBorderColor} pt-3`}>Dr Mavis Mazhura</div>
+                  </div>
+                  {/* Hover hint */}
+                  <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/40 transition-colors duration-300 flex items-center justify-center pointer-events-none">
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 text-navy text-xs font-bold px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
+                      Preview
+                    </span>
+                  </div>
                 </div>
+                <a
+                  href={book.amazonUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto"
+                >
+                  Buy on Amazon
+                </a>
               </div>
-              <a href="https://www.amazon.com/Self-Leadership-Matters-Accepting-Responsibility-Accountability-ebook/dp/B074DB9Z9W" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
-            </div>
-
-            {/* Book 2 */}
-            <div className="flex flex-col gap-3 group">
-              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
-                <img src="/navigating-the-rapids.jpg" alt="Navigating the Rapids and Waves of Life Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-terracotta/90 flex flex-col justify-between p-5 -z-10">
-                  <div className="text-[10px] uppercase tracking-widest text-white/70 font-bold">Author</div>
-                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">Navigating the Rapids and Waves of Life</h4>
-                  <div className="text-xs text-white/70 border-t border-white/20 pt-3">Dr Mavis Mazhura</div>
-                </div>
-              </div>
-              <a href="https://www.amazon.com/Navigating-Rapids-Waves-Life-Managing-ebook/dp/B0792P2TLS" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
-            </div>
-
-            {/* Book 3 */}
-            <div className="flex flex-col gap-3 group">
-              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
-                <img src="/managing-emotions-for-financial-freedom.png" alt="Managing Emotions for Financial Freedom Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-emerald-900 flex flex-col justify-between p-5 -z-10">
-                  <div className="text-[10px] uppercase tracking-widest text-white/70 font-bold">Author</div>
-                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">Managing Emotions for Financial Freedom</h4>
-                  <div className="text-xs text-white/70 border-t border-white/20 pt-3">Dr Mavis Mazhura</div>
-                </div>
-              </div>
-              <a href="https://www.amazon.com/Managing-Emotions-Financial-Freedom-Invisible-ebook/dp/B019NEUYDQ" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
-            </div>
-
-            {/* Book 4 */}
-            <div className="flex flex-col gap-3 group">
-              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
-                <img src="/ABCs-of-emotions.jpg" alt="ABC's of Emotions Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-slate-200 flex flex-col justify-between p-5 -z-10">
-                  <div className="text-[10px] uppercase tracking-widest text-terracotta font-bold">Author</div>
-                  <h4 className="font-serif text-lg leading-tight mb-2 text-navy">ABC's of Emotions</h4>
-                  <div className="text-xs text-slate-500 border-t border-slate-400 pt-3">Dr Mavis Mazhura</div>
-                </div>
-              </div>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
-            </div>
-
-            {/* Book 5 */}
-            <div className="flex flex-col gap-3 group">
-              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
-                <img src="/aspire-awaken.jpg" alt="Aspire, Awaken and Actualise Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
-                {/* Fallback overlay in case image goes missing temporarily */}
-                <div className="absolute inset-0 bg-[#2a3b52] flex flex-col justify-between p-5 -z-10">
-                  <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
-                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">Aspire, Awaken and Actualise</h4>
-                  <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
-                </div>
-              </div>
-              <a href="https://www.amazon.com/Aspire-Awaken-Actualise-Journeys-Transformation-ebook/dp/B0791XHN73" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
-            </div>
-
-            {/* Book 6 */}
-            <div className="flex flex-col gap-3 group">
-              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
-                <img src="/the-change.png" alt="The Change Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-red-900 flex flex-col justify-between p-5 -z-10">
-                  <div className="text-[10px] uppercase tracking-widest text-white/50 font-bold">Author</div>
-                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">The Change</h4>
-                  <div className="text-xs text-white/50 border-t border-white/20 pt-3">Dr Mavis Mazhura</div>
-                </div>
-              </div>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
-            </div>
-            
-            {/* Book 7 */}
-            <div className="flex flex-col gap-3 group">
-              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
-                <img src="/career-resilience.jpg" alt="Career Resilience Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
-                {/* Fallback overlay in case image goes missing temporarily */}
-                <div className="absolute inset-0 bg-slate-700 flex flex-col justify-between p-5 -z-10">
-                  <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
-                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">Career Resilience</h4>
-                  <div className="text-xs text-slate-400 border-t border-slate-600 pt-3">Dr Mavis Mazhura</div>
-                </div>
-              </div>
-              <a href="https://www.amazon.com/CAREER-RESILIENCE-WELL-BEING-MAVIS-MAZHURA/dp/1776335775" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
-            </div>
-
-            {/* Book 8 */}
-            <div className="flex flex-col gap-3 group">
-              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
-                <img src="/heart-boundaries.jpg" alt="Heart Boundaries Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-rose-900 flex flex-col justify-between p-5 -z-10">
-                  <div className="text-[10px] uppercase tracking-widest text-rose-200 font-bold">Author</div>
-                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">Heart Boundaries</h4>
-                  <div className="text-xs text-rose-200 border-t border-rose-800 pt-3">Dr Mavis Mazhura</div>
-                </div>
-              </div>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
-            </div>
-
-            {/* Book 9 */}
-            <div className="flex flex-col gap-3 group">
-              <div className="aspect-[2/3] rounded-md shadow-md overflow-hidden relative cursor-pointer group-hover:shadow-xl transition-all duration-300">
-                <img src="/financial-confidence.jpg" alt="Financial Confidence for Her Wellbeing Book Cover" className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500" />
-                {/* Fallback overlay in case image goes missing temporarily */}
-                <div className="absolute inset-0 bg-teal-900 flex flex-col justify-between p-5 -z-10">
-                  <div className="text-[10px] uppercase tracking-widest text-sage font-bold">Author</div>
-                  <h4 className="font-serif text-lg leading-tight mb-2 text-white">Financial Confidence for Her Wellbeing</h4>
-                  <div className="text-xs text-slate-400 border-t border-slate-700 pt-3">Dr Mavis Mazhura</div>
-                </div>
-              </div>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto">Buy on Amazon</a>
-            </div>
-
+            ))}
           </div>
 
         </div>
@@ -196,6 +273,92 @@ export default function Books() {
           </Link>
         </div>
       </section>
+
+      {/* ── Book Preview Modal ── */}
+      {selectedBook && (
+        <div
+          className={`fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-8 transition-all duration-300 ${isModalVisible ? 'opacity-100' : 'opacity-0'}`}
+          onClick={closePreview}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${selectedBook.title} preview`}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-navy/80 backdrop-blur-md"></div>
+
+          {/* Modal Content */}
+          <div
+            className={`relative bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transition-all duration-300 ${isModalVisible ? 'scale-100 translate-y-0' : 'scale-95 translate-y-4'}`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={closePreview}
+              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors group"
+              aria-label="Close preview"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-slate-600 group-hover:text-navy transition-colors">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <div className="flex flex-col md:flex-row">
+              {/* Book Cover — left column */}
+              <div className="md:w-2/5 p-6 md:p-8 flex items-start justify-center bg-slate-50 rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none">
+                <div className="w-full max-w-[240px] aspect-[2/3] rounded-lg shadow-xl overflow-hidden relative">
+                  <img
+                    src={selectedBook.cover}
+                    alt={`${selectedBook.title} Book Cover`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  {/* Fallback */}
+                  <div className={`absolute inset-0 ${selectedBook.fallbackBg} flex flex-col justify-between p-5 -z-10`}>
+                    <div className={`text-[10px] uppercase tracking-widest ${selectedBook.fallbackLabelColor} font-bold`}>Author</div>
+                    <h4 className={`font-serif text-lg leading-tight mb-2 ${selectedBook.fallbackTitleColor}`}>{selectedBook.title}</h4>
+                    <div className={`text-xs ${selectedBook.fallbackMetaColor} border-t ${selectedBook.fallbackBorderColor} pt-3`}>Dr Mavis Mazhura</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Details — right column */}
+              <div className="md:w-3/5 p-6 md:p-8 flex flex-col">
+                <span className="text-terracotta font-semibold tracking-widest uppercase text-xs mb-2 block">
+                  Dr Mavis Mazhura{selectedBook.year ? ` · ${selectedBook.year}` : ''}
+                </span>
+                <h3 className="text-2xl md:text-3xl font-serif text-navy leading-tight mb-5">
+                  {selectedBook.title}
+                </h3>
+
+                <div className="h-px bg-slate-200 mb-5"></div>
+
+                <p className="text-slate-600 leading-relaxed mb-8 flex-1">
+                  {selectedBook.synopsis}
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={selectedBook.amazonUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 bg-terracotta text-white px-6 py-3 rounded-lg font-bold shadow-lg hover:bg-[#c96c51] hover:-translate-y-0.5 transition-all duration-300 text-sm"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                    Buy on Amazon
+                  </a>
+                  <button
+                    onClick={closePreview}
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold text-sm border border-slate-200 text-slate-600 hover:bg-slate-50 hover:border-slate-300 transition-all duration-300"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
