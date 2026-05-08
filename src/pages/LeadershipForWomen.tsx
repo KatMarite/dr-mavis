@@ -26,7 +26,11 @@ export default function LeadershipForWomen() {
             <Link to="/apply" className="hidden md:inline-block bg-terracotta text-white text-sm font-semibold px-6 py-2.5 rounded shadow hover:bg-[#c96c51] transition-all">
               Apply Now
             </Link>
-            <button className="md:hidden text-navy p-2 ml-4" onClick={toggleMobileMenu}>
+            <button
+              className="md:hidden text-navy p-2 ml-4"
+              onClick={toggleMobileMenu}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8">
                 <path strokeLinecap="round" strokeLinejoin="round" d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"} />
               </svg>
@@ -80,9 +84,9 @@ export default function LeadershipForWomen() {
               <Link to="/apply" className="w-full sm:w-auto text-center bg-sage text-navy px-8 py-4 rounded font-bold hover:bg-white hover:shadow-lg transition-all duration-300">
                 Apply Now
               </Link>
-              <a href="mailto:mavism@tb2b.co.za" className="w-full sm:w-auto text-center border-2 border-slate-500 text-white px-8 py-4 rounded font-medium hover:border-white transition-all duration-300">
+              <Link to="/contact#contact-form" className="w-full sm:w-auto text-center border-2 border-slate-500 text-white px-8 py-4 rounded font-medium hover:border-white transition-all duration-300">
                 Book a Discovery Call
-              </a>
+              </Link>
             </div>
             <div className="mt-6">
               <a href="#" className="text-slate-400 text-sm flex items-center hover:text-white transition-colors">
@@ -402,9 +406,9 @@ export default function LeadershipForWomen() {
                 <span className="flex-shrink-0 mx-4 text-slate-400 text-sm font-semibold uppercase">Or</span>
                 <div className="flex-grow border-t border-slate-200"></div>
               </div>
-              <a href="mailto:mavism@tb2b.co.za" className="w-full border-2 border-slate-300 text-navy px-8 py-4 rounded font-bold hover:border-navy transition-colors">
+              <Link to="/contact#contact-form" className="w-full border-2 border-slate-300 text-navy px-8 py-4 rounded font-bold hover:border-navy transition-colors">
                 Book a Discovery Call
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { submitToWeb3Forms } from '../utils/web3forms';
 
 // --- Scorecard Data ---
@@ -300,9 +301,9 @@ export default function Scorecard() {
                 <div className="bg-alabaster p-8 rounded-2xl border border-slate-200 mb-10">
                   <h4 className="font-bold text-navy mb-2">Next Step: Sustainable Leadership Process</h4>
                   <p className="text-sm text-slate-500 mb-6">Discover how to transition into a state of high-performance without the burnout.</p>
-                  <a href="mailto:mavism@tb2b.co.za" className="inline-block bg-navy text-white px-8 py-3 rounded font-bold hover:bg-slate-800 transition-colors">
+                  <Link to="/contact#contact-form" className="inline-block bg-navy text-white px-8 py-3 rounded font-bold hover:bg-slate-800 transition-colors">
                     Book a Discovery Call with Dr. Mavis
-                  </a>
+                  </Link>
                 </div>
                 
                 <button 
