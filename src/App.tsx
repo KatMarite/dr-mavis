@@ -18,7 +18,8 @@ import Contact from './pages/Contact';
 import LeadershipForWomen from './pages/LeadershipForWomen';
 import Scorecard from './pages/Scorecard';
 import Apply from './pages/Apply';
-
+import { CartProvider } from './context/CartContext';
+import CartDrawer from './components/CartDrawer';
 const IS_COMING_SOON = false;
 
 function ComingSoon() {
@@ -102,8 +103,11 @@ function AppLayout() {
 
 export default function App() {
   return (
-    <Router>
-      <AppLayout />
-    </Router>
+    <CartProvider>
+      <Router>
+        <AppLayout />
+        <CartDrawer />
+      </Router>
+    </CartProvider>
   );
 }

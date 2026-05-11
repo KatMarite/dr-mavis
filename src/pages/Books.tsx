@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 interface Book {
   id: number;
@@ -8,6 +9,7 @@ interface Book {
   amazonUrl: string;
   synopsis: string;
   year?: string;
+  price: number;
   fallbackBg: string;
   fallbackLabelColor: string;
   fallbackTitleColor: string;
@@ -18,6 +20,7 @@ interface Book {
 const books: Book[] = [
   {
     id: 1,
+    price: 250,
     title: 'Self-Leadership Matters',
     cover: '/Self-leadership-matters.jpg',
     amazonUrl: 'https://www.amazon.com/Self-Leadership-Matters-Accepting-Responsibility-Accountability-ebook/dp/B074DB9Z9W',
@@ -31,6 +34,7 @@ const books: Book[] = [
   },
   {
     id: 2,
+    price: 250,
     title: 'Navigating the Rapids and Waves of Life',
     cover: '/navigating-the-rapids.jpg',
     amazonUrl: 'https://www.amazon.com/Navigating-Rapids-Waves-Life-Managing-ebook/dp/B0792P2TLS',
@@ -44,6 +48,7 @@ const books: Book[] = [
   },
   {
     id: 3,
+    price: 250,
     title: 'Managing Emotions for Financial Freedom',
     cover: '/managing-emotions-for-financial-freedom.png',
     amazonUrl: 'https://www.amazon.com/Managing-Emotions-Financial-Freedom-Invisible-ebook/dp/B019NEUYDQ',
@@ -57,6 +62,7 @@ const books: Book[] = [
   },
   {
     id: 4,
+    price: 250,
     title: "ABC's of Emotions",
     cover: '/ABCs-of-emotions.jpg',
     amazonUrl: '#',
@@ -69,6 +75,7 @@ const books: Book[] = [
   },
   {
     id: 5,
+    price: 250,
     title: 'Aspire, Awaken and Actualise',
     cover: '/aspire-awaken.jpg',
     amazonUrl: 'https://www.amazon.com/Aspire-Awaken-Actualise-Journeys-Transformation-ebook/dp/B0791XHN73',
@@ -82,6 +89,7 @@ const books: Book[] = [
   },
   {
     id: 6,
+    price: 250,
     title: 'The Change',
     cover: '/the-change.png',
     amazonUrl: '#',
@@ -94,6 +102,7 @@ const books: Book[] = [
   },
   {
     id: 7,
+    price: 250,
     title: 'Career Resilience & Well-Being',
     cover: '/career-resilience.jpg',
     amazonUrl: 'https://www.amazon.com/CAREER-RESILIENCE-WELL-BEING-MAVIS-MAZHURA/dp/1776335775',
@@ -107,6 +116,7 @@ const books: Book[] = [
   },
   {
     id: 8,
+    price: 250,
     title: 'Heart Boundaries',
     cover: '/heart-boundaries.jpg',
     amazonUrl: '#',
@@ -119,6 +129,7 @@ const books: Book[] = [
   },
   {
     id: 9,
+    price: 250,
     title: 'Financial Confidence for Her Wellbeing',
     cover: '/financial-confidence.jpg',
     amazonUrl: '#',
@@ -128,12 +139,13 @@ const books: Book[] = [
     fallbackTitleColor: 'text-white',
     fallbackMetaColor: 'text-slate-400',
     fallbackBorderColor: 'border-slate-700',
-  },
+  }
 ];
 
 export default function Books() {
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const { addToCart } = useCart();
 
   const openPreview = (book: Book) => {
     setSelectedBook(book);
@@ -221,14 +233,22 @@ export default function Books() {
                     </span>
                   </div>
                 </div>
-                <a
-                  href={book.amazonUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors mt-auto"
-                >
-                  Buy on Amazon
-                </a>
+                <div className="mt-auto flex flex-col gap-2">
+                  <button
+                    onClick={() => addToCart({ id: book.id, title: book.title, price: book.price, cover: book.cover })}
+                    className="bg-navy text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-slate-800 transition-colors w-full"
+                  >
+                    Add to Cart - R {book.price}
+                  </button>
+                  <a
+                    href={book.amazonUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors w-full"
+                  >
+                    Buy on Amazon
+                  </a>
+                </div>
               </div>
             ))}
           </div>
@@ -336,6 +356,18 @@ export default function Books() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={() => {
+                      addToCart({ id: selectedBook.id, title: selectedBook.title, price: selectedBook.price, cover: selectedBook.cover });
+                      closePreview();
+                    }}
+                    className="inline-flex items-center justify-center gap-2 bg-navy text-white px-6 py-3 rounded-lg font-bold shadow-lg hover:bg-slate-800 transition-all duration-300 text-sm"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    </svg>
+                    Add to Cart - R {selectedBook.price}
+                  </button>
                   <a
                     href={selectedBook.amazonUrl}
                     target="_blank"
