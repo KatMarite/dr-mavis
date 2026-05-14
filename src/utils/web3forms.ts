@@ -11,7 +11,7 @@
 const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 // ✏️  Replace this with your own Web3Forms access key
-const ACCESS_KEY = '30a79b40-94e8-4699-8ed4-33feca297c3d';
+const ACCESS_KEY = '86be5cc5-3f5d-4efc-8b92-138fe92975df';
 
 export interface Web3FormsPayload {
   /** Email subject line */
