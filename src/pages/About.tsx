@@ -42,14 +42,23 @@ export default function About() {
             
             <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
               <p>
-                Dr. Mazhura works at the intersection of <strong className="text-navy font-semibold">identity, emotional renewal, and leadership performance</strong>. She dedicates her practice to helping leaders—especially women—shift from overfunctioning and burnout into aligned, influential, and sustainable leadership.
+                Dr. Mazhura works at the intersection of <strong className="text-navy font-semibold">identity, emotional renewal, and leadership performance</strong>. She dedicates her practice to helping leaders-especially women-shift from overfunctioning and burnout into aligned, influential, and sustainable leadership.
               </p>
               <p>
                 A multiple award-winning facilitator and coach, she is a licensed partner of <strong className="text-navy font-semibold">Leadership Management International (LMI)</strong>, where she has been recognised for excellence in leadership development across Africa and the Middle East.
               </p>
               <p>
-                Having worked, studied, and delivered programmes globally—including across Africa, Europe, North America, Asia, and Australia—Dr. Mazhura brings a truly cosmopolitan and systems-aware leadership perspective to every engagement.
+                Having worked, studied, and delivered programmes globally-including across Africa, Europe, North America, Asia, and Australia-Dr. Mazhura brings a truly cosmopolitan and systems-aware leadership perspective to every engagement.
               </p>
+            </div>
+
+            {/* Global Affiliation Badge */}
+            <div className="mt-10 inline-flex items-center gap-6 px-6 py-4 bg-white shadow-sm border border-slate-100 rounded-2xl hover:shadow-md transition-shadow">
+              <img src="/logos/lmi logo.png" alt="LMI Logo" className="h-14 w-auto object-contain" />
+              <div className="border-l border-slate-200 pl-6">
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Global Licensed Partner</p>
+                <p className="text-sm text-navy font-semibold">Leadership Management International</p>
+              </div>
             </div>
           </motion.div>
 
