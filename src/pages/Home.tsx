@@ -50,8 +50,8 @@ export default function Home() {
             </div>
             <div className="absolute -bottom-6 -left-4 sm:left-[-2rem] bg-white p-5 shadow-xl rounded-xl max-w-[240px] border-l-4 border-sage animate-float z-20">
               <div className="flex items-center gap-3 mb-2">
-                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-navy"><path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" /></svg>
+                <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                  <img src="/logos/lmi logo.png" alt="LMI Logo" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="text-sm font-bold text-navy leading-tight">LMI Licensed Partner</h3>
               </div>
