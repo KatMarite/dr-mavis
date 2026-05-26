@@ -71,9 +71,6 @@ export default function Home() {
         >
           <p className="text-center text-xs font-semibold text-slate-400 uppercase tracking-widest mb-8 px-6">Trusted by global organisations</p>
           <div className="relative w-full overflow-hidden">
-            {/* Fade edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
             {/* Scrolling track — duplicated for seamless loop */}
             <div className="flex animate-marquee hover:[animation-play-state:paused]">
               {[0, 1].map((set) => (
@@ -93,7 +90,7 @@ export default function Home() {
                       key={`${set}-${logo.alt}`}
                       src={logo.src}
                       alt={logo.alt}
-                      className="h-12 md:h-14 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                      className="h-12 md:h-14 w-auto object-contain transition-all duration-500"
                     />
                   ))}
                 </div>
@@ -124,19 +121,27 @@ export default function Home() {
           {/* Foundation Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
             <div className="p-6 bg-white rounded-xl shadow-sm border border-slate-100">
-              <div className="w-10 h-10 bg-sage/20 rounded-lg flex items-center justify-center mb-4 text-navy font-bold">1</div>
+              <div className="w-10 h-10 bg-sage/20 rounded-lg flex items-center justify-center mb-4 text-navy">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+              </div>
               <h3 className="font-semibold text-navy mb-2">Adult Development Theory</h3>
             </div>
             <div className="p-6 bg-white rounded-xl shadow-sm border border-slate-100">
-              <div className="w-10 h-10 bg-sage/20 rounded-lg flex items-center justify-center mb-4 text-navy font-bold">2</div>
+              <div className="w-10 h-10 bg-sage/20 rounded-lg flex items-center justify-center mb-4 text-navy">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+              </div>
               <h3 className="font-semibold text-navy mb-2">Behavioural Science</h3>
             </div>
             <div className="p-6 bg-white rounded-xl shadow-sm border border-slate-100">
-              <div className="w-10 h-10 bg-sage/20 rounded-lg flex items-center justify-center mb-4 text-navy font-bold">3</div>
+              <div className="w-10 h-10 bg-sage/20 rounded-lg flex items-center justify-center mb-4 text-navy">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+              </div>
               <h3 className="font-semibold text-navy mb-2">Emotional Intelligence</h3>
             </div>
             <div className="p-6 bg-white rounded-xl shadow-sm border border-slate-100">
-              <div className="w-10 h-10 bg-sage/20 rounded-lg flex items-center justify-center mb-4 text-navy font-bold">4</div>
+              <div className="w-10 h-10 bg-sage/20 rounded-lg flex items-center justify-center mb-4 text-navy">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.002 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg>
+              </div>
               <h3 className="font-semibold text-navy mb-2">Neuroscience & Change</h3>
             </div>
           </div>
@@ -166,9 +171,9 @@ export default function Home() {
                 <li className="flex items-center"><svg className="w-4 h-4 text-sage mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg> Weekly coaching sessions</li>
                 <li className="flex items-center"><svg className="w-4 h-4 text-sage mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg> Action plans & frameworks</li>
               </ul>
-              <a href="#" className="text-navy font-semibold inline-flex items-center group-hover:text-terracotta">
+              <Link to="/services" className="text-navy font-semibold inline-flex items-center group-hover:text-terracotta">
                 View Programmes <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-              </a>
+              </Link>
             </motion.div>
 
             {/* Card 2 */}
@@ -185,9 +190,9 @@ export default function Home() {
                 <li className="flex items-center"><svg className="w-4 h-4 text-terracotta mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg> Organisational diagnostics</li>
                 <li className="flex items-center"><svg className="w-4 h-4 text-terracotta mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg> Culture & change management</li>
               </ul>
-              <a href="#" className="text-navy font-semibold inline-flex items-center group-hover:text-terracotta">
+              <Link to="/services" className="text-navy font-semibold inline-flex items-center group-hover:text-terracotta">
                 View Consulting <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-              </a>
+              </Link>
             </motion.div>
 
             {/* Card 3 */}
@@ -204,9 +209,9 @@ export default function Home() {
                 <li className="flex items-center"><svg className="w-4 h-4 text-sage mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg> Corporate events & summits</li>
                 <li className="flex items-center"><svg className="w-4 h-4 text-sage mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg> Bespoke masterclasses</li>
               </ul>
-              <a href="#" className="text-sage font-semibold inline-flex items-center hover:text-white transition-colors">
+              <Link to="/contact" className="text-sage font-semibold inline-flex items-center hover:text-white transition-colors">
                 Book Dr. Mazhura <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-              </a>
+              </Link>
             </motion.div>
           </div>
         </div>
