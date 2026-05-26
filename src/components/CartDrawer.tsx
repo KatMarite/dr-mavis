@@ -1,9 +1,11 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useCart } from '../context/CartContext';
+import { submitToWeb3Forms } from '../utils/web3forms';
 
 export default function CartDrawer() {
   const { isCartOpen, setIsCartOpen, items, updateQuantity, removeFromCart, totalPrice } = useCart();
   const formRef = useRef<HTMLFormElement>(null);
+  const [isProcessing, setIsProcessing] = useState(false);
 
   // Payfast credentials
   const MERCHANT_ID = "11267024";
@@ -21,7 +23,35 @@ export default function CartDrawer() {
 
   if (!isCartOpen) return null;
 
-  const handleCheckout = () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (isProcessing) return;
+
+    setIsProcessing(true);
+    
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name_first') as string;
+    const email = formData.get('email_address') as string;
+    const phone = formData.get('cell_number') as string;
+    const address = formData.get('custom_str1') as string;
+
+    const cartSummary = items.map(item => `${item.quantity}x ${item.title} (R ${item.price.toFixed(2)})`).join('\n');
+
+    try {
+      await submitToWeb3Forms({
+        subject: `New Book Order from ${name}`,
+        from_name: name,
+        email: email,
+        phone: phone,
+        address: address,
+        order_total: `R ${totalPrice.toFixed(2)}`,
+        items: cartSummary,
+        message: 'A new order has been initiated. Waiting for PayFast payment confirmation.',
+      });
+    } catch (error) {
+      console.error("Failed to send order notification:", error);
+    }
+
     if (formRef.current) {
       formRef.current.submit();
     }
@@ -105,13 +135,9 @@ export default function CartDrawer() {
 
         {/* Footer / Checkout */}
         {items.length > 0 && (
-          <div className="p-6 border-t border-slate-200 bg-slate-50">
-            <div className="flex justify-between items-center mb-6">
-              <span className="text-lg text-slate-600">Subtotal</span>
-              <span className="text-2xl font-bold text-navy">R {totalPrice.toFixed(2)}</span>
-            </div>
-
-            <form ref={formRef} action="https://www.payfast.co.za/eng/process" method="post" className="hidden">
+          <div className="p-6 border-t border-slate-200 bg-slate-50 flex-shrink-0">
+            <h3 className="text-navy font-semibold mb-4 text-lg">Delivery Details</h3>
+            <form ref={formRef} action="https://www.payfast.co.za/eng/process" method="post" className="flex flex-col gap-3" onSubmit={handleSubmit}>
               <input type="hidden" name="merchant_id" value={MERCHANT_ID} />
               <input type="hidden" name="merchant_key" value={MERCHANT_KEY} />
               {window.location.hostname !== 'localhost' && (
@@ -122,14 +148,33 @@ export default function CartDrawer() {
               )}
               <input type="hidden" name="amount" value={totalPrice.toFixed(2)} />
               <input type="hidden" name="item_name" value="Dr Mavis Books Order" />
-            </form>
 
-            <button
-              onClick={handleCheckout}
-              className="w-full bg-terracotta text-white font-bold py-4 rounded shadow-lg hover:bg-[#c96c51] transition-colors"
-            >
-              Checkout with Payfast
-            </button>
+              <div>
+                <input type="text" name="name_first" required placeholder="Full Name *" className="w-full border border-slate-300 rounded p-2 text-sm outline-none focus:border-navy focus:ring-1 focus:ring-navy" />
+              </div>
+              <div>
+                <input type="email" name="email_address" required placeholder="Email Address *" className="w-full border border-slate-300 rounded p-2 text-sm outline-none focus:border-navy focus:ring-1 focus:ring-navy" />
+              </div>
+              <div>
+                <input type="tel" name="cell_number" required placeholder="Phone Number *" className="w-full border border-slate-300 rounded p-2 text-sm outline-none focus:border-navy focus:ring-1 focus:ring-navy" />
+              </div>
+              <div>
+                <textarea name="custom_str1" required placeholder="Delivery Address *" className="w-full border border-slate-300 rounded p-2 text-sm outline-none focus:border-navy focus:ring-1 focus:ring-navy resize-none" rows={2}></textarea>
+              </div>
+
+              <div className="flex justify-between items-center my-1 pt-3 border-t border-slate-200">
+                <span className="text-slate-600 font-medium">Subtotal</span>
+                <span className="text-xl font-bold text-navy">R {totalPrice.toFixed(2)}</span>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isProcessing}
+                className={`w-full bg-terracotta text-white font-bold py-3.5 rounded shadow-md transition-colors mt-1 ${isProcessing ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#c96c51]'}`}
+              >
+                {isProcessing ? 'Processing Order...' : 'Checkout with Payfast'}
+              </button>
+            </form>
           </div>
         )}
       </div>

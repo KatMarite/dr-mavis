@@ -64,7 +64,7 @@ export default function Media() {
                       <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                     </div>
                   </div>
-                  <div className="absolute top-4 left-4 bg-navy text-white text-xs font-bold px-3 py-1 uppercase tracking-wider rounded">Interview</div>
+                  <div className="absolute top-4 left-4 bg-navy text-white text-xs font-bold px-3 py-1 uppercase tracking-wider rounded">SABC</div>
                 </div>
                 <h3 className="text-2xl font-serif text-navy mb-3 group-hover:text-terracotta transition-colors">Managing Emotions for Financial Freedom</h3>
                 <p className="text-slate-600 mb-4">Dr. Mavis discusses her book "Managing Emotions for Financial Freedom" in this featured interview.</p>
@@ -82,10 +82,46 @@ export default function Media() {
                       <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                     </div>
                   </div>
-                  <div className="absolute top-4 left-4 bg-navy text-white text-xs font-bold px-3 py-1 uppercase tracking-wider rounded">Interview</div>
+                  <div className="absolute top-4 left-4 bg-navy text-white text-xs font-bold px-3 py-1 uppercase tracking-wider rounded">SABC</div>
                 </div>
                 <h3 className="text-2xl font-serif text-navy mb-3 group-hover:text-terracotta transition-colors">Navigating the Rapids and Waves of Life</h3>
                 <p className="text-slate-600 mb-4">International Human behaviour specialist and author Mavis Mazhura on her book Navigating the Rapids.</p>
+              </a>
+            </article>
+
+            {/* Interview - Nature vs. Nurture */}
+            <article className="group">
+              <a href="https://youtu.be/BfC292zqTaA?si=rSGrNw3r4ueRKbwx" target="_blank" rel="noopener noreferrer" className="block">
+                <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 bg-slate-900 shadow-lg">
+                  <img src={`https://img.youtube.com/vi/BfC292zqTaA/hqdefault.jpg`} alt="Nature vs. Nurture: Why we do what we do with money" className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-terracotta/90 text-white rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform shadow-lg pl-1">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                  <div className="absolute top-4 left-4 bg-navy text-white text-xs font-bold px-3 py-1 uppercase tracking-wider rounded">News24</div>
+                </div>
+                <h3 className="text-2xl font-serif text-navy mb-3 group-hover:text-terracotta transition-colors">Nature vs. Nurture: Why we do what we do with money</h3>
+                <p className="text-slate-600 mb-4">Dr. Mavis Mazhura discusses the psychology behind our financial decisions and behaviours.</p>
+              </a>
+            </article>
+
+            {/* Podcast - What Happens When You Die Without a Will? */}
+            <article className="group">
+              <a href="https://youtu.be/DNawOwIuSkw" target="_blank" rel="noopener noreferrer" className="block">
+                <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 bg-slate-900 shadow-lg">
+                  <img src={`https://img.youtube.com/vi/DNawOwIuSkw/hqdefault.jpg`} alt="What Happens When You Die Without a Will?" className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-terracotta/90 text-white rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform shadow-lg pl-1">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                  <div className="absolute top-4 left-4 bg-navy text-white text-xs font-bold px-3 py-1 uppercase tracking-wider rounded">Sanlam</div>
+                </div>
+                <h3 className="text-2xl font-serif text-navy mb-3 group-hover:text-terracotta transition-colors">What Happens When You Die Without a Will?</h3>
+                <p className="text-slate-600 mb-4">Dr. Mavis Mazhura features on The Relebogile Mabotja Podcast to discuss the emotional and psychological impacts of estate planning.</p>
               </a>
             </article>
           </div>

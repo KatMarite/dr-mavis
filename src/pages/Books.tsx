@@ -201,9 +201,13 @@ export default function Books() {
       <section className="py-24 bg-alabaster">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16 md:flex justify-between items-end border-b border-slate-200 pb-8">
-            <div className="max-w-2xl">
+            <div className="max-w-3xl">
               <h2 className="text-3xl md:text-4xl font-serif text-navy">Published Works</h2>
-              <p className="text-slate-600 mt-4">Essential reading for modern leaders navigating complexity and burnout.</p>
+              <p className="text-slate-600 mt-4 mb-6">Essential reading for modern leaders navigating complexity and burnout.</p>
+              
+              <div className="p-4 bg-red-50 border-l-4 border-red-500 rounded text-red-700 text-sm font-medium shadow-sm">
+                <strong>Please note:</strong> this website and the official sources listed here are the only authorised places to purchase our books. Any listings elsewhere (including platforms like Takealot) are unofficial imitations — buyer beware.
+              </div>
             </div>
           </div>
 
@@ -240,14 +244,18 @@ export default function Books() {
                   >
                     Add to Cart - R {book.price}
                   </button>
-                  <a
-                    href={book.amazonUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors w-full"
-                  >
-                    Buy on Amazon
-                  </a>
+                  {book.amazonUrl !== '#' ? (
+                    <a
+                      href={book.amazonUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-terracotta text-white py-2 px-4 rounded text-center text-sm font-bold shadow hover:bg-[#c96c51] transition-colors w-full"
+                    >
+                      Buy on Amazon
+                    </a>
+                  ) : (
+                    <div className="py-2 px-4 invisible text-sm">Placeholder</div>
+                  )}
                 </div>
               </div>
             ))}
@@ -368,17 +376,19 @@ export default function Books() {
                     </svg>
                     Add to Cart - R {selectedBook.price}
                   </button>
-                  <a
-                    href={selectedBook.amazonUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-terracotta text-white px-6 py-3 rounded-lg font-bold shadow-lg hover:bg-[#c96c51] hover:-translate-y-0.5 transition-all duration-300 text-sm"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                    </svg>
-                    Buy on Amazon
-                  </a>
+                  {selectedBook.amazonUrl !== '#' && (
+                    <a
+                      href={selectedBook.amazonUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 bg-terracotta text-white px-6 py-3 rounded-lg font-bold shadow-lg hover:bg-[#c96c51] hover:-translate-y-0.5 transition-all duration-300 text-sm"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                      </svg>
+                      Buy on Amazon
+                    </a>
+                  )}
                   <button
                     onClick={closePreview}
                     className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold text-sm border border-slate-200 text-slate-600 hover:bg-slate-50 hover:border-slate-300 transition-all duration-300"
