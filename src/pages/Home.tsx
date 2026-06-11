@@ -252,6 +252,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 6. Testimonials */}
+      <section id="testimonials" className="py-24 bg-white border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-terracotta font-semibold tracking-widest uppercase text-sm mb-3 block">Testimonials</span>
+            <h2 className="text-4xl font-serif text-navy mb-4">What Our Clients Say</h2>
+            <p className="text-slate-600 text-lg">Hear from leaders who have rebuilt their internal authority.</p>
+          </div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
+          >
+            {/* Review 1 */}
+            <div className="bg-alabaster p-8 rounded-2xl shadow-sm border border-slate-100">
+              <span className="font-serif text-terracotta text-5xl leading-none block mb-2">"</span>
+              <p className="text-slate-600 italic mb-6 text-sm leading-relaxed">
+                My confidence is restored. I’m more vocal, more assertive, and taking the lead. I connect with my team at a human level.
+              </p>
+              <div>
+                <p className="font-bold text-navy">Sweetness</p>
+                <p className="text-xs text-slate-500 uppercase tracking-wide">Marketing Manager</p>
+              </div>
+            </div>
+
+            {/* Review 2 */}
+            <div className="bg-navy text-white p-8 rounded-2xl shadow-md border border-slate-800">
+              <span className="font-serif text-sage text-5xl leading-none block mb-2">"</span>
+              <p className="text-slate-300 italic mb-6 text-sm leading-relaxed">
+                I didn’t think I needed this programme. I thought I knew goal setting and time management — until I had to write my mission statement. Leadership and business success is a continuous process.
+              </p>
+              <div>
+                <p className="font-bold text-white">Namhla</p>
+                <p className="text-xs text-sage uppercase tracking-wide">Wellbeing Executive</p>
+              </div>
+            </div>
+
+            {/* Review 3 */}
+            <div className="bg-alabaster p-8 rounded-2xl shadow-sm border border-slate-100">
+              <span className="font-serif text-terracotta text-5xl leading-none block mb-2">"</span>
+              <p className="text-slate-600 italic mb-6 text-sm leading-relaxed">
+                This course helped me face internal barriers. The biggest takeaway was crystallising my thinking. In corporate, structure is given — this helped me define the impact I want to make.
+              </p>
+              <div>
+                <p className="font-bold text-navy">Caroline</p>
+                <p className="text-xs text-slate-500 uppercase tracking-wide">Leadership Development Executive</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* 6. Scorecard Lead Gen */}
       <section id="scorecard" className="py-24 bg-navy relative overflow-hidden">
         {/* Abstract graphics */}
