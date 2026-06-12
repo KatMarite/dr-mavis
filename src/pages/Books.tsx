@@ -129,7 +129,7 @@ const books: Book[] = [
   },
   {
     id: 9,
-    price: 250,
+    price: 300,
     title: 'Financial Confidence for Her Wellbeing',
     cover: '/financial-confidence.jpg',
     amazonUrl: '#',
