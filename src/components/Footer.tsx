@@ -2,9 +2,21 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { submitToWeb3Forms } from '../utils/web3forms';
 
+const WORKBOOK_PDF_URL = '/Financial Confidence for Her Wellbeing - Companion Workbook.pdf';
+
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [subStatus, setSubStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  /** Programmatically triggers a file download */
+  const triggerWorkbookDownload = () => {
+    const link = document.createElement('a');
+    link.href = WORKBOOK_PDF_URL;
+    link.download = 'Financial Confidence for Her Wellbeing - Companion Workbook.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const handleNewsletter = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,7 +34,8 @@ export default function Footer() {
       if (result.success) {
         setSubStatus('success');
         setEmail('');
-        setTimeout(() => setSubStatus('idle'), 5000);
+        // Auto-download the companion workbook PDF
+        triggerWorkbookDownload();
       } else {
         setSubStatus('error');
         setTimeout(() => setSubStatus('idle'), 4000);
@@ -68,33 +81,61 @@ export default function Footer() {
         {/* Newsletter Column */}
         <div className="md:col-span-4">
           <h4 className="text-white font-semibold mb-2">Newsletter & Monthly Webinar</h4>
-          <p className="text-sm text-slate-400 mb-4 italic">"Stay in the Work. Stay in the Process. Stay in Your Power."</p>
-          <form onSubmit={handleNewsletter} className="flex flex-col gap-3">
-            <input
-              type="email"
-              required
-              placeholder="Email Address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="bg-slate-800 text-white border border-slate-700 px-4 py-3 rounded text-sm focus:outline-none focus:border-sage transition-colors"
-            />
-            <button
-              type="submit"
-              disabled={subStatus === 'loading' || subStatus === 'success'}
-              className={`font-semibold px-4 py-3 rounded text-sm transition-colors disabled:opacity-70 ${
-                subStatus === 'success'
-                  ? 'bg-sage text-white'
-                  : subStatus === 'error'
+          <p className="text-sm text-slate-400 mb-3 italic">"Stay in the Work. Stay in the Process. Stay in Your Power."</p>
+          <p className="text-xs text-sage mb-4 flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3.5 h-3.5 flex-shrink-0">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 10.5v6m3-3H9m4.06-7.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+            </svg>
+            Subscribe & receive a free Companion Workbook!
+          </p>
+
+          {subStatus === 'success' ? (
+            <div className="flex flex-col gap-3">
+              <div className="bg-sage/20 border border-sage/30 rounded-lg p-4 text-center">
+                <p className="text-sage font-semibold text-sm mb-1">✓ You're subscribed!</p>
+                <p className="text-slate-400 text-xs mb-3">Your companion workbook download should have started automatically.</p>
+                <button
+                  onClick={triggerWorkbookDownload}
+                  className="inline-flex items-center gap-2 text-xs text-sage hover:text-white transition-colors underline underline-offset-2"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3.5 h-3.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                  </svg>
+                  Download again
+                </button>
+              </div>
+              <button
+                onClick={() => setSubStatus('idle')}
+                className="text-xs text-slate-500 hover:text-slate-300 transition-colors"
+              >
+                Subscribe another email
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleNewsletter} className="flex flex-col gap-3">
+              <input
+                type="email"
+                required
+                placeholder="Email Address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-slate-800 text-white border border-slate-700 px-4 py-3 rounded text-sm focus:outline-none focus:border-sage transition-colors"
+              />
+              <button
+                type="submit"
+                disabled={subStatus === 'loading'}
+                className={`font-semibold px-4 py-3 rounded text-sm transition-colors disabled:opacity-70 ${
+                  subStatus === 'error'
                     ? 'bg-red-500 text-white'
                     : 'bg-terracotta text-white hover:bg-[#c96c51]'
-              }`}
-            >
-              {subStatus === 'loading' ? 'Subscribing...'
-                : subStatus === 'success' ? '✓ Subscribed!'
-                : subStatus === 'error' ? 'Failed — Try Again'
-                : 'Subscribe Now'}
-            </button>
-          </form>
+                }`}
+              >
+                {subStatus === 'loading' ? 'Subscribing...'
+                  : subStatus === 'error' ? 'Failed — Try Again'
+                  : 'Subscribe & Get Free Workbook'}
+              </button>
+            </form>
+          )}
         </div>
       </div>
 
