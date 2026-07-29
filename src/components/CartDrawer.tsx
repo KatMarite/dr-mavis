@@ -1,16 +1,12 @@
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { submitToWeb3Forms } from '../utils/web3forms';
 
 export default function CartDrawer() {
   const { isCartOpen, setIsCartOpen, items, updateQuantity, removeFromCart, totalPrice } = useCart();
-  const formRef = useRef<HTMLFormElement>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [showCheckoutForm, setShowCheckoutForm] = useState(false);
-
-  // Payfast credentials
-  const MERCHANT_ID = "11267024";
-  const MERCHANT_KEY = "k76vmk6gnvkwm";
+  const [checkoutError, setCheckoutError] = useState('');
 
   // Lock body scroll when cart is open
   useEffect(() => {
@@ -21,6 +17,7 @@ export default function CartDrawer() {
       // Reset checkout form when cart closes
       setShowCheckoutForm(false);
       setIsProcessing(false);
+      setCheckoutError('');
     }
     return () => { document.body.style.overflow = ''; };
   }, [isCartOpen]);
@@ -32,6 +29,7 @@ export default function CartDrawer() {
     if (isProcessing) return;
 
     setIsProcessing(true);
+    setCheckoutError('');
     
     const formData = new FormData(e.currentTarget);
     const name = formData.get('name_first') as string;
@@ -41,6 +39,7 @@ export default function CartDrawer() {
 
     const cartSummary = items.map(item => `${item.quantity}x ${item.title} (R ${item.price.toFixed(2)})`).join('\n');
 
+    // Send order notification email (best-effort, don't block checkout)
     try {
       await submitToWeb3Forms({
         subject: `New Book Order from ${name}`,
@@ -56,13 +55,50 @@ export default function CartDrawer() {
       console.error("Failed to send order notification:", error);
     }
 
-    if (formRef.current) {
-      formRef.current.submit();
+    // Request payment data from server-side API (credentials stay on the server)
+    try {
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount: totalPrice.toFixed(2),
+          item_name: 'Dr Mavis Books Order',
+          name_first: name,
+          email_address: email,
+          cell_number: phone,
+          custom_str1: address,
+          origin: window.location.origin,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Checkout request failed');
+      }
+
+      const { action, fields } = await response.json();
+
+      // Dynamically create and submit a form to PayFast
+      const payForm = document.createElement('form');
+      payForm.method = 'POST';
+      payForm.action = action;
+      payForm.style.display = 'none';
+
+      for (const [key, value] of Object.entries(fields)) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value as string;
+        payForm.appendChild(input);
+      }
+
+      document.body.appendChild(payForm);
+      payForm.submit();
+    } catch (error) {
+      console.error('Checkout error:', error);
+      setCheckoutError('Something went wrong preparing your payment. Please try again.');
+      setIsProcessing(false);
     }
   };
-
-  const returnUrl = window.location.origin + "/books?payment=success";
-  const cancelUrl = window.location.origin + "/books?payment=cancel";
 
   return (
     <div className="fixed inset-0 z-[10000] flex justify-end">
@@ -189,18 +225,7 @@ export default function CartDrawer() {
 
             {/* Delivery Details Form */}
             <h3 className="text-navy font-semibold mb-4 text-lg">Delivery Details</h3>
-            <form ref={formRef} action="https://www.payfast.co.za/eng/process" method="post" className="flex flex-col gap-3" onSubmit={handleSubmit}>
-              <input type="hidden" name="merchant_id" value={MERCHANT_ID} />
-              <input type="hidden" name="merchant_key" value={MERCHANT_KEY} />
-              {window.location.hostname !== 'localhost' && (
-                <>
-                  <input type="hidden" name="return_url" value={returnUrl} />
-                  <input type="hidden" name="cancel_url" value={cancelUrl} />
-                </>
-              )}
-              <input type="hidden" name="amount" value={totalPrice.toFixed(2)} />
-              <input type="hidden" name="item_name" value="Dr Mavis Books Order" />
-
+            <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
               <div>
                 <input type="text" name="name_first" required placeholder="Full Name *" className="w-full border border-slate-300 rounded p-2 text-sm outline-none focus:border-navy focus:ring-1 focus:ring-navy" />
               </div>
@@ -213,6 +238,10 @@ export default function CartDrawer() {
               <div>
                 <textarea name="custom_str1" required placeholder="Delivery Address *" className="w-full border border-slate-300 rounded p-2 text-sm outline-none focus:border-navy focus:ring-1 focus:ring-navy resize-none" rows={2}></textarea>
               </div>
+
+              {checkoutError && (
+                <p className="text-red-500 text-sm text-center">{checkoutError}</p>
+              )}
 
               <button
                 type="submit"

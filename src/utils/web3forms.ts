@@ -47,6 +47,7 @@ export async function submitToWeb3Forms(
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       access_key: ACCESS_KEY,
+      botcheck: '',  // Web3Forms honeypot – bots fill this; legit submissions leave it empty
       ...payload,
     }),
   });
