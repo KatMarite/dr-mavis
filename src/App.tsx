@@ -18,6 +18,7 @@ import Contact from './pages/Contact';
 import LeadershipForWomen from './pages/LeadershipForWomen';
 import Scorecard from './pages/Scorecard';
 import Apply from './pages/Apply';
+import ShippingPolicy from './pages/ShippingPolicy';
 import { CartProvider } from './context/CartContext';
 import CartDrawer from './components/CartDrawer';
 const IS_COMING_SOON = false;
@@ -93,6 +94,7 @@ function AppLayout() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/scorecard" element={<Scorecard />} />
           <Route path="/apply" element={<Apply />} />
+          <Route path="/shipping-policy" element={<ShippingPolicy />} />
         </Routes>
       </div>
       <Footer />
